@@ -1,3 +1,9 @@
+# xml
+*.xml
+
+# iml
+*.iml
+
 # Logs
 logs
 *.log
