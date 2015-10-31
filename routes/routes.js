@@ -1,10 +1,21 @@
-var student = require('../models/student');
+var Student = require('../models/student');
+
 /* GET home page. */
 module.exports.getHome = function(req, res) {
-  res.render('index', { title: 'CAPA' });
+  Student.find({}, function(err, students) {
+    res.render('index', {
+      title: 'CAPA',
+      students: students
+    });
+  });
 };
 
 /* GET profile page. */
 module.exports.getProfile = function(req, res) {
-  res.render('profile', { title: 'Profile' });
+  Student.find({ _id: req.params.sid }, function(err, student) {
+    res.render('profile', {
+      title: 'Profile',
+      student: student
+    });
+  });
 };

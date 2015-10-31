@@ -7,5 +7,10 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <h2>Students</h2>
+    <% students.forEach(function(s) { %>
+      <p><a href="/profile/<%= s._id %>"><%= s %></a></p>
+    <% }); %>
   </body>
 </html>

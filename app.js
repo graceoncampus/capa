@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/users', users);
 
 app.get('/', routes.getHome);
-app.get('/profile', routes.getProfile);
+app.get('/profile/:sid', routes.getProfile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
