@@ -5,8 +5,48 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="malawi.png">
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="overlay" id="Intro">
+      <p>Thank you for taking the time to get to know our students! Below, you can find interviews of all of our students. In each student interview, you can find their individual prayer requests. Thank you for taking the time to pray for the Central African Preaching Academy, our professors, our staff, and our students.
+        <br>
+        <br>
+        Whether you partner with us financially or in prayer, we thank you for supporting the work that we do here. Please enjoy the student interviews, and join with us in praising our God for the work that He is doing here in Malawi!
+      </p>
+    </div>
+
+    <div class="overlay" id="Students">
+      <h2>Meet the students</h2>
+      <button class="btn btn-default">Diploma</button>
+      <button class="btn btn-default">Masters of divinity</button>
+      <button class="btn btn-default">Show All</button>
+    </div>
+
+    <div class="container results">
+      <% if(users.length){ %>
+      <h3>
+        Results (<%= users.length %>)
+      </h3>
+    </div>
 
     <h2>Students</h2>
     <% students.forEach(function(s) { %>

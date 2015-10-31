@@ -1,0 +1,88 @@
+@media screen and (min-width: 500px) {
+    html,
+    body {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    html,
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html,
+    body {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html,
+    body {
+        font-size: 18px;
+    }
+}
+
+.carousal {
+    background-color: #5B5E53;
+    height: 50rem;
+}
+
+.overlay#Intro {
+    background-color: #E0DB7C;
+    height: auto;
+}
+
+#Intro p {
+    margin-left: 30rem;
+    padding: 4rem 5rem;
+}
+
+.overlay#Students {
+    height: 70rem;
+}
+
+p {
+    font-family: Ubuntu, sans-serif;
+    font-size: 2rem;
+    color: #5B5E53;
+}
+
+p:first-letter {
+    font-weight: bold;
+    font-size: 5rem;
+    color: #5B5E53;
+}
+
+#Students h2 {
+    text-transform: uppercase;
+    color: #5B5E53;
+}
+
+#Students {
+    text-align: center;
+}
+
+.btn.btn-default {
+    background-color: #e1b67c;
+    color: #ffffff;
+}
+
+.btn.btn-default:hover {
+    background-color: #E0DB7C;
+}
+
+.button {
+    text-transform: uppercase;
+    position:absolute;
+    margin-left:50%;
+    margin-right:50%;
+    bottom:  5px;
+}
+
+.btn {
+
+}
