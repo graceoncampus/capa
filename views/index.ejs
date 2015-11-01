@@ -2,7 +2,10 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel='stylesheet' href='/stylesheets/home.css'>
   </head>
   <body>
     <div class="carousel slide" data-ride="carousel">
@@ -26,31 +29,44 @@
       </a>
     </div>
 
-    <div class="overlay" id="Intro">
-      <p>Thank you for taking the time to get to know our students! Below, you can find interviews of all of our students. In each student interview, you can find their individual prayer requests. Thank you for taking the time to pray for the Central African Preaching Academy, our professors, our staff, and our students.
+    <div class="overlay" id="intro">
+        <p>Thank you for taking the time to get to know our students! Below, you can find interviews of all of our students. In each student interview, you can find their individual prayer requests. Thank you for taking the time to pray for the Central African Preaching Academy, our professors, our staff, and our students.
         <br>
         <br>
         Whether you partner with us financially or in prayer, we thank you for supporting the work that we do here. Please enjoy the student interviews, and join with us in praising our God for the work that He is doing here in Malawi!
-      </p>
+        </p>
     </div>
-
-    <div class="overlay" id="Students">
-      <h2>Meet the students</h2>
-      <button class="btn btn-default">Diploma</button>
-      <button class="btn btn-default">Masters of divinity</button>
-      <button class="btn btn-default">Show All</button>
+    <div class="container">
+      <div id="students">
+        <div class="row" id="meet-the-students">
+          <h2>Meet the students</h2>
+          <button class="btn btn-default">Diploma</button>
+          <button class="btn btn-default">Masters of divinity</button>
+          <button class="btn btn-default">Show All</button>
+        </div>
+        <div class="row">
+          <% students.forEach(function(s) { %>
+          <div class="col-md-2 col-sm-4 student">
+            <a href="/profile/<%= s._id %>"><img src="/images/chris.jpg" class="img-responsive"></a>
+            <p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
+          </div>
+          <% }); %>
+        </div>
+      </div>
     </div>
+    <footer>
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Central African Preaching Academy</p>
+          <p>Lilongwe, Malawi</p>
+        </div>
+        <div class="col-sm-6" style="text-align: right;">
+          <p><a href="mailto:capa@gmail.com" target="_blank">capa@gmail.com</a></p>
+          <p><a href="http://capa.prayformalawi.com" target="_blank">capa.prayformalawi.com</a></p>
+        </div>
+      </div>
+    </footer>
 
-    <div class="container results">
-      <% if(users.length){ %>
-      <h3>
-        Results (<%= users.length %>)
-      </h3>
-    </div>
-
-    <h2>Students</h2>
-    <% students.forEach(function(s) { %>
-      <p><a href="/profile/<%= s._id %>"><%= s %></a></p>
-    <% }); %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   </body>
 </html>

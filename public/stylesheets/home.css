@@ -1,69 +1,52 @@
-@media screen and (min-width: 500px) {
-    html,
-    body {
-        font-size: 15px;
-    }
-}
-
-@media screen and (min-width: 600px) {
-    html,
-    body {
-        font-size: 16px;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    html,
-    body {
-        font-size: 17px;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    html,
-    body {
-        font-size: 18px;
-    }
-}
-
-.carousal {
+.carousel {
     background-color: #5B5E53;
     height: 50rem;
 }
 
-.overlay#Intro {
+#intro {
     background-color: #E0DB7C;
     height: auto;
+    padding: 9%;
 }
 
-#Intro p {
-    margin-left: 30rem;
-    padding: 4rem 5rem;
-}
-
-.overlay#Students {
-    height: 70rem;
-}
+/*#Intro p {*/
+    /*margin-left: 30rem;*/
+    /*padding: 4rem 5rem;*/
+/*}*/
 
 p {
-    font-family: Ubuntu, sans-serif;
-    font-size: 2rem;
     color: #5B5E53;
 }
 
-p:first-letter {
-    font-weight: bold;
-    font-size: 5rem;
+h1,
+h2 {
     color: #5B5E53;
 }
 
-#Students h2 {
+#students h2 {
     text-transform: uppercase;
-    color: #5B5E53;
 }
 
-#Students {
+#students {
     text-align: center;
+}
+
+#meet-the-students {
+    /*padding-top: 9%;*/
+    /*padding-bottom: 5rem;*/
+    padding: 9%;
+}
+
+.student {
+    margin: 1rem 0;
+}
+
+#students img {
+    object-fit: cover;
+    object-position: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
 }
 
 .btn.btn-default {
@@ -81,8 +64,4 @@ p:first-letter {
     margin-left:50%;
     margin-right:50%;
     bottom:  5px;
-}
-
-.btn {
-
 }
