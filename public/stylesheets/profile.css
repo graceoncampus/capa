@@ -12,12 +12,22 @@ body{
     body {
         font-size: 5px;
     }
+    .detail-list{
+        position: absolute;
+        right: 50%;
+
+    }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
     html,
     body {
         font-size: 5px;
+    }
+    .detail-list{
+        position: absolute;
+        right: 50%;
+
     }
 }
 
@@ -71,19 +81,17 @@ hr{
     padding: 2rem;
 }
 
-.countryPic{
-
-    position: relative;
-    opacity: .4;
-
-}
 
 .detail-list{
+    position: absolute;
+    right: 27%;
     display: inline;
+    z-index: 2;
     list-style: none;
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 500;
+    margin-top: 3rem;
 }
 .header_name{
 
@@ -92,7 +100,7 @@ hr{
     background-color: rgba(219, 143, 0, 0.52);
     text-transform: uppercase;
     color: white;
-
+    display: none;
 
 }
 .interview_a{
@@ -106,35 +114,30 @@ hr{
     margin: 5rem;
 }
 .list{
-    background-image: url("http://phonebookoftheworld.com/bolivia/mapofbolivia.jpg");
-    background-size: 100% 100%;
+    margin-top: 5rem;
+    display: inline;
     height: 40rem;
 
+}
+.map{
 
+    height: 30rem;
+    margin: auto;
+    display: inline;
+    opacity: .3;
 }
-.pie{
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    background: yellowgreen;
-    display: inline-block;
-    z-index: 2;
-    margin: 5rem 0;
-}
-.pie::before {
-    content: '';
-    display: block;
-    margin-left: 50%;
-    height: 100%;
-    border-radius: 0 100% 100% 0 / 50%;
-    background-color: inherit;
-    transform-origin: left;
-    animation: spin 3s linear infinite, bg 6s step-end infinite;
-}
+
 .profilePic{
     margin: auto;
-    height: 25rem;
-    border-radius: 50%;
 
+    position: relative;
+    height: 25rem;
+    width: 25rem;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+
+    display: block;
 }
 .interview_q>a{
     color: #7a6f67;
@@ -172,7 +175,7 @@ hr{
 
 
 #details{
-    display: inline-block;
+
     text-align: center;
 }
 #indiv{
