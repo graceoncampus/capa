@@ -1,13 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<head lang="en">
+  <meta charset="UTF-8">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/hover-min.css" rel="stylesheet">
+  <link href="/stylesheets/profile.css" rel="stylesheet">
+  <title>CAPA</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
 
-    <p><%= student %></p>
-  </body>
+      <!-- hide all answers and show all questions-->
+      $(".answer").hide();
+      $(".answer2").hide();
+      $(".q_a").show();
+      $(".q_a2").show();
+      <!-- once clicked, show the class-->
+      $(".q_a").click(function(){
+        $(".answer2").hide();
+        $(".answer").slideToggle();
+
+      });
+      $(".q_a2").click(function(){
+        $(".answer").hide();
+        $(".answer2").slideToggle();
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+<div class="header_name slide-in">
+  <div class="col-sm-offset-2 block-name">
+    <h1> Kondwani NYANDA</h1>
+  </div>
+
+</div>
+<!--left top side for profile pic-->
+<div class="col-md-8 middle" id="intro">
+  <img class="img-responsive profilePic" src="http://www.jamsadr.com/files/Professional/1fb60f23-00d5-4c43-a552-63321c9ed969/Presentation/HighResPhoto/Person-Donald-900x1080.jpg"/>
+  <a class="hvr-grow support mobile-ver">
+    SUPPORT
+  </a>
+              <span id="quote">
+                  Our generation today, people are focusing about you getting rich and all those things.
+                  But that's not the Bible way. The Bible first and foremost is salvation.
+              </span>
+
+  <hr>
+</div>
+<!--right top side for individual description data-->
+<div class="col-md-4 col-sm-12" id="details">
+  <div class="list">
+    <ul class="detail-list">
+      <li>
+        Program m. Div
+      </li>
+      <li>
+        age 28
+      </li>
+      <li>
+        hometwon blantry
+      </li>
+      <li>
+        family
+      </li>
+      <li>
+                        <span class="pie">
+
+                        </span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<!-- left bottom side for individual description passage-->
+<div class="col-md-8 " id="indiv">
+
+        <span id="more-info">
+            Ernesst is currently a Master's of Divinity student residing in akdsjf;lka malawi. He came to the realization
+             that he wasnt easjkld;f ocbais;dofiuasdf o;iajefo ;ia bible with references to greek and hebrewkajdafl;sjfl;k
+             Come one underswtand bible AMEN
+         </span>
+
+  <div class="interview">
+    <!-- person's name title-->
+    <h3>
+      INTERVIEW WITH NELSON
+    </h3>
+
+    <div class="interview_q">
+      <!--list of all questions to interview, render from database-->
+      <a class="q_a" href="#answer">
+        <h4>Q.1 Why did you first become a pastor?</h4>
+      </a>
+      <!-- add extra number to id and class-->
+      <a class="q_a2" href="#answer2">
+        <h4>Q.2 What is your current ministry</h4>
+      </a>
+
+    </div>
+
+    <div class="interview_a">
+      <br>
+      <!--list of all answers to interview, draw from database-->
+      <div class="answer" id="answer">
+                    <span class="response_q">
+                        Q.1 Why did you first become a pastor?
+                    </span>
+        <br>
+
+                    <span class="response_a">
+                        Show up yeaaa
+
+                        Specifies how to send the form-data (which HTTP method to use). Only for
+                        type="submit"
+                    </span>
+      </div>
+      <br>
+      <!-- add extra number to id and class-->
+      <div class="answer2" id="answer2">
+        <span class="response_q">Q.2 What is your current ministry</span>
+        <br>
+                    <span class="response_a">
+                        Second answer to you questions (which HTTP method to use). Only for type="submit"
+                    </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- right bottom side-->
+<div class="col-md-4 middle">
+  <a class="hvr-grow support">
+    SUPPORT
+  </a>
+</div>
+</body>
 </html>

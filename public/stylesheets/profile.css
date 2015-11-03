@@ -1,0 +1,210 @@
+/*can remove later*/
+
+html,
+body{
+    color: #676767;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+@media screen and (min-width: 300px) {
+    html,
+    body {
+        font-size: 5px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    html,
+    body {
+        font-size: 5px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html,
+    body {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html,
+    body {
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1000px){
+    .mobile-ver{
+        display: inline;
+        visibility: hidden;
+    }
+
+}
+/*end of copied script may overlap with home*/
+@keyframes spin {
+    to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+    50% { background: currentColor; }
+}
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+
+
+li{
+    padding-top: 2rem;
+}
+h3{
+    text-align: center;
+}
+hr{
+    border-style: solid;
+    border-color: #e1b67c;
+    border-width: 4px 0 0 0;
+    margin: 0;
+}
+
+.btn{
+    margin-top: 5rem;
+}
+.block-name{
+    background-color: rgba(56, 56, 56, 0.83);
+    padding: 2rem;
+}
+
+.countryPic{
+
+    position: relative;
+    opacity: .4;
+
+}
+
+.detail-list{
+    display: inline;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.header_name{
+    display: block;
+    margin-bottom: 4rem;
+    background-color: rgba(219, 143, 0, 0.52);
+    text-transform: uppercase;
+    color: white;
+}
+.interview_a{
+    margin: 3rem 0 5rem 0;
+    font-size: initial;
+}
+.interview_title{
+    text-align: center;
+}
+.interview{
+    margin: 5rem;
+}
+.list{
+    background-image: url("http://phonebookoftheworld.com/bolivia/mapofbolivia.jpg");
+    background-size: 100% 100%;
+    height: 40rem;
+
+
+}
+.pie{
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: yellowgreen;
+    display: inline-block;
+    z-index: 2;
+    margin: 5rem 0;
+}
+.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    animation: spin 3s linear infinite, bg 6s step-end infinite;
+}
+.profilePic{
+    margin: auto;
+    width: 26rem;
+    border-radius: 50%;
+
+}
+.interview_q>a{
+    color: #7a6f67;
+    text-decoration: none;
+}
+.interview_q>a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.response_a{
+    margin: 2rem;
+
+}
+.support{
+    font-weight: 900;
+    padding: 1rem 3rem;
+    font-size: 2.4rem;
+    border-radius: 10px;
+    background-color: rgba(219, 143, 0, 0.52);
+    color: #7a6f67;
+    text-align: center;
+}
+.support:hover{
+    text-decoration: none;
+    color: #7a6f67;
+}
+.mobile-ver{
+    margin: 2rem 0 2rem 0;
+}
+.middle{
+    text-align: center;
+}
+
+
+
+.slide-in {
+    animation: slide-in 1s forwards;
+    -webkit-animation: slide-in 1s forwards;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+#details{
+    display: inline-block;
+    text-align: center;
+}
+#indiv{
+    padding: 0 4rem 0 4rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+}
+#intro{
+    padding: 0 8rem 0 8rem;
+}
+
+#quote{
+    margin: 0 0 2rem 0;
+    text-align: center;
+    font-style: italic;
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 400;
+}
+#more-info{
+    display: block;
+    font-size: 1.8rem;
+    padding: 2rem 7rem 3rem 7rem;
+}
