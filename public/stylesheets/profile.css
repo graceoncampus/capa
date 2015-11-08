@@ -2,52 +2,27 @@
 
 html,
 body{
+
     color: #676767;
     font-family: 'Ubuntu', sans-serif;
+    font-size: 8px;
 
 }
-
-@media screen and (min-width: 300px) {
-    html,
-    body {
-        font-size: 5px;
-    }
-    .detail-list{
-        position: absolute;
-        right: 50%;
-
-    }
+.detail-list{
+    right: 42%;
 }
 
-@media screen and (max-width: 500px) {
-    html,
-    body {
-        font-size: 5px;
-    }
-    .detail-list{
-        position: absolute;
-        right: 50%;
-
-    }
-}
-
-@media screen and (min-width: 800px) {
-    html,
-    body {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    html,
-    body {
-        font-size: 10px;
-    }
-}
 @media screen and (min-width: 1000px){
+    html,
+    body {
+        font-size: 10px;
+    }
     .mobile-ver{
         display: inline;
         visibility: hidden;
+    }
+    .detail-list{
+        right: 27%;
     }
 
 }
@@ -84,7 +59,7 @@ hr{
 
 .detail-list{
     position: absolute;
-    right: 27%;
+
     display: inline;
     z-index: 2;
     list-style: none;
@@ -129,7 +104,6 @@ hr{
 
 .profilePic{
     margin: auto;
-
     position: relative;
     height: 25rem;
     width: 25rem;
