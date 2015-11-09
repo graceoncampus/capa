@@ -1,6 +1,5 @@
-.carousel {
-    background-color: #5B5E53;
-    height: 50rem;
+body{
+    position: relative;
 }
 
 #intro {
@@ -22,6 +21,8 @@ h1,
 h2 {
     color: #5B5E53;
 }
+
+
 
 #students h2 {
     text-transform: uppercase;
