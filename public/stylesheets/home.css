@@ -39,7 +39,10 @@ h2 {
 
 .student {
     margin: 1rem 0;
+    display: inline;
 }
+
+
 
 #students img {
     object-fit: cover;
@@ -54,9 +57,6 @@ h2 {
     color: #ffffff;
 }
 
-.btn.btn-default:hover {
-    background-color: #E0DB7C;
-}
 
 .button {
     text-transform: uppercase;

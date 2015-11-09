@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var studentSchema = mongoose.Schema({
     name: String,
-    program: Number, // 0 is Advanced Diploma, 1 is MDiv
+    program: String, // diploma, mdiv
     age: Number,
     hometown: String,
     family: String,
