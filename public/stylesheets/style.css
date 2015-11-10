@@ -50,3 +50,7 @@ footer p,
 footer a {
   color: #ffffff;
 }
+
+.nav>li>a>img {
+  max-width: 1em;
+}
