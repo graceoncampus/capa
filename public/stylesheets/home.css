@@ -1,6 +1,16 @@
-.carousel {
-    background-color: #5B5E53;
-    height: 50rem;
+
+
+/*#Intro p {*/
+    /*margin-left: 30rem;*/
+    /*padding: 4rem 5rem;*/
+/*}*/
+h1,
+h2 {
+    color: #5B5E53;
+}
+
+p {
+    color: #5B5E53;
 }
 
 #intro {
@@ -8,49 +18,15 @@
     height: auto;
     padding: 9%;
 }
-
-/*#Intro p {*/
-    /*margin-left: 30rem;*/
-    /*padding: 4rem 5rem;*/
-/*}*/
-
-p {
-    color: #5B5E53;
-}
-
-.quote {
-    display: none;
-    position: absolute;
-    top: -5px;
-    left: -5px;
-
-}
-
-h1,
-h2 {
-    color: #5B5E53;
-}
-
-#students h2 {
-    text-transform: uppercase;
-}
-
-#students {
-    text-align: center;
-}
-
 #meet-the-students {
     /*padding-top: 9%;*/
     /*padding-bottom: 5rem;*/
     padding: 9%;
 }
 
-.student {
-    margin: 1rem 0;
-    display: inline;
+#students {
+    text-align: center;
 }
-
-
 
 #students img {
     object-fit: cover;
@@ -60,6 +36,9 @@ h2 {
     border-radius: 100%;
 }
 
+#students h2 {
+    text-transform: uppercase;
+}
 .btn.btn-default {
     background-color: #e1b67c;
     color: #ffffff;
@@ -73,3 +52,25 @@ h2 {
     margin-right:50%;
     bottom:  5px;
 }
+
+.carousel {
+    background-color: #5B5E53;
+    height: 50rem;
+}
+
+.quote {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: 20px;
+
+}
+
+.student {
+    margin: 1rem 0;
+    display: inline;
+}
+
+
+
+
