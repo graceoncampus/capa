@@ -18,6 +18,14 @@ p {
     color: #5B5E53;
 }
 
+.quote {
+    display: none;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+
+}
+
 h1,
 h2 {
     color: #5B5E53;

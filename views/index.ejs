@@ -49,7 +49,12 @@
         <div class="row">
           <% students.forEach(function(s) { %>
           <div class="col-md-2 col-sm-4 student <%= s.program %>" >
-            <a href="/profile/<%= s._id %>"><img src="/images/chris.jpg" class="img-responsive"></a>
+            <div class="profilePic">
+              <a href="/profile/<%= s._id %>"><img src="/images/chris.jpg" class="img-responsive"></a>
+            </div>
+            <div class="quote">
+              <p><%= s.quote %><</p>
+            </div>
             <p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
           </div>
           <% }); %>
@@ -90,6 +95,13 @@
           $('.btn').css("background-color", "#e1b67c");
           $(this).css("background-color", "#E0DB7C");
           $('.student').show(); //css("display", "none");
+        });
+        $('.student').hover( function () {
+          $(this).children('.profilePic').css("opacity", ".3");
+          $(this).children('.quote').css("display", "inline");
+        }, function () {
+          $(this).children('.profilePic').css("opacity", "1");
+          $(this).children('.quote').css("display", "none");
         });
       });
     </script>
