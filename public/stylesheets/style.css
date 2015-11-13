@@ -1,7 +1,8 @@
 html,
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: Ubuntu, sans-serif;
   font-size: 20px;
+  color: #7a6f67;
 }
 
 
@@ -48,4 +49,8 @@ footer {
 footer p,
 footer a {
   color: #ffffff;
+}
+
+.nav>li>a>img {
+  max-width: 1em;
 }

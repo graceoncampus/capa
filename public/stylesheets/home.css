@@ -3,7 +3,11 @@ body{
 }
 
 #intro {
-    background-color: #E0DB7C;
+    background-color: #e7e9a3;
+    /*background-image: url(/images/capa.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: co;*/
+    /*background-size: contain;*/
     height: auto;
     padding: 9%;
 }

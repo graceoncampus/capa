@@ -1,53 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-  <meta charset="UTF-8">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/hover-min.css" rel="stylesheet">
-  <link href="/stylesheets/profile.css" rel="stylesheet">
-  <title>CAPA</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script>
-
-    $(document).ready(function(){
-      $(".header_name").slideToggle(800);
-      <!-- hide all answers and show all questions-->
-      $(".answer").hide();
-      $(".answer2").hide();
-      $(".q_a").show();
-      $(".q_a2").show();
-      <!-- once clicked, show the class-->
-      $(".q_a").click(function(){
-        $(".answer2").hide();
-        $(".answer").slideToggle();
-
-      });
-      $(".q_a2").click(function(){
-        $(".answer").hide();
-        $(".answer2").slideToggle();
-
-      });
-
-    });
-  </script>
+<head>
+  <%- include head.ejs %>
+  <link rel="stylesheet" href="/stylesheets/hover-min.css">
 </head>
 <body>
+  <%- include navbar.ejs %>
 <div class="header_name">
   <div class="col-sm-offset-2 block-name">
-    <h1> Kondwani NYANDA</h1>
+    <h1><%= student.name %></h1>
   </div>
 
 </div>
 <!--left top side for profile pic-->
 <div class="col-md-8 middle" id="intro">
-  <img class="profilePic" src="https://i.ytimg.com/vi/oVXZTmi2ruI/maxresdefault.jpg"/>
-  <a class="hvr-grow support mobile-ver">
-    SUPPORT
+  <img class="profilePic" src="<%= student.photoURI %>">
+  <a href="http://www.tmai.org/donate/" class="hvr-grow support mobile-ver" target="_blank">
+      SUPPORT
   </a>
               <span id="quote">
-                  Our generation today, people are focusing about you getting rich and all those things.
-                  But that's not the Bible way. The Bible first and foremost is salvation.
+                  "<%= student.quote %>"
               </span>
 
   <hr>
@@ -57,19 +29,19 @@
 <div class="col-md-4 col-sm-12" id="details">
 
   <div class="list">
-    <img class="map" src="/images/capa-map.png"/>
+    <img class="map" src="http://phonebookoftheworld.com/bolivia/mapofbolivia.jpg">
     <ul class="detail-list">
       <li>
-        Program m. Div
+        Program: <%= student.program %>
       </li>
       <li>
-        age 28
+        Age: <%= student.age %>
       </li>
       <li>
-        hometwon blantry
+        Hometown: <%= student.hometown %>
       </li>
       <li>
-        family
+        Family: <%= student.family %>
       </li>
     </ul>
 
@@ -80,15 +52,13 @@
 <div class="col-md-8 " id="indiv">
 
         <span id="more-info">
-            Ernesst is currently a Master's of Divinity student residing in akdsjf;lka malawi. He came to the realization
-             that he wasnt easjkld;f ocbais;dofiuasdf o;iajefo ;ia bible with references to greek and hebrewkajdafl;sjfl;k
-             Come one underswtand bible AMEN
+            <%= student.summary %>
          </span>
 
   <div class="interview">
     <!-- person's name title-->
     <h3>
-      INTERVIEW WITH NELSON
+      Interview with <%= student.name %>
     </h3>
 
     <div class="interview_q">
@@ -136,9 +106,33 @@
 </div>
 <!-- right bottom side-->
 <div class="col-md-4 middle">
-  <a class="hvr-grow support">
+  <a href="http://tmai.org/donate" class="hvr-grow support" target="_blank">
     SUPPORT
   </a>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $(".header_name").slideToggle(800);
+    <!-- hide all answers and show all questions-->
+    $(".answer").hide();
+    $(".answer2").hide();
+    $(".q_a").show();
+    $(".q_a2").show();
+    <!-- once clicked, show the class-->
+    $(".q_a").click(function(){
+      $(".answer2").hide();
+      $(".answer").slideToggle();
+
+    });
+    $(".q_a2").click(function(){
+      $(".answer").hide();
+      $(".answer2").slideToggle();
+
+    });
+
+  });
+</script>
 </body>
 </html>
