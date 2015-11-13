@@ -41,7 +41,7 @@ img {
 }
 
 footer {
-  background-color: #7a6f67;
+  background-color: #62abe1;
   margin-top: 5rem;
   padding: 5%;
 }
@@ -53,4 +53,21 @@ footer a {
 
 .nav>li>a>img {
   max-width: 1em;
+}
+
+.navbar {
+  background-color: #62abe1;
+  border: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav>li>a,
+.nav>li>a:active,
+.nav>li>a:hover,
+.nav>li>a:focus {
+  background-color: #62abe1;
 }
