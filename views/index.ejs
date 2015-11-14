@@ -32,7 +32,11 @@
         </div>
         <div class="row">
           <% students.forEach(function(s) { %>
-          <div class="col-md-2 col-sm-4 student <%= s.program %>" >
+          <% if (s.program == "Master of Divinity") { %>
+            <div class="col-md-2 col-sm-4 student mdiv">
+          <% } else if (s.program == "Advanced Diploma") { %>
+            <div class="col-md-2 col-sm-4 student diploma">
+          <% } %>
             <div class="profilePic">
               <a href="/profile/<%= s._id %>"><img src="/images/<%= s.photoURI %>" class="img-responsive"></a>
             </div>
