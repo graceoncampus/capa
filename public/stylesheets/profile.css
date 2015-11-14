@@ -9,6 +9,10 @@
 .support{
     padding: 1rem 3rem;
 }
+.desktop-ver{
+    display: none;
+    visibility: hidden;
+}
 @media screen and (min-width: 1000px){
 
     .mobile-ver{
@@ -19,6 +23,10 @@
         right: 27%;
         font-size: 0.8rem;
     }
+    .desktop-ver{
+        display: inline;
+        visibility: visible;
+    }
     .map{
         right: 5%;
     }
@@ -26,6 +34,7 @@
         padding: .5rem 2rem;
     }
 }
+
 /*end of copied script may overlap with home*/
 
 
