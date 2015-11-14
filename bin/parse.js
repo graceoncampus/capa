@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/capadb');
 var fs = require('fs');
 var parse = require('csv-parse');
 var Student = require('../models/student');
