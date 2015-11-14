@@ -50,10 +50,6 @@ h2 {
 
 
 #students img {
-    object-fit: cover;
-    object-position: center;
-    width: 8rem;
-    height: 8rem;
     border-radius: 100%;
 }
 

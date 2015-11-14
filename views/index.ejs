@@ -33,32 +33,14 @@
             <div class="profilePic">
               <a href="/profile/<%= s._id %>"><img src="/images/chris.jpg" class="img-responsive"></a>
             </div>
-            <div class="quote">
-              <p><%= s.quote %><</p>
-            </div>
             <p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
           </div>
           <% }); %>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="row">
-        <div class="col-sm-6">
-          <p>Central African Preaching Academy</p>
-          <p>Lilongwe, Malawi</p>
-        </div>
-        <div class="col-sm-6" style="text-align: right;">
-          <p><a href="mailto:capa@gmail.com" target="_blank">capa@gmail.com</a></p>
-          <p><a href="http://capa.prayformalawi.com" target="_blank">capa.prayformalawi.com</a></p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous">
-    </script>
-    <script type='text/javascript'>
+  <%- include footer.ejs %>
+  <script type='text/javascript'>
       $(document).ready(function() {
         $('.diploma-btn').on('click', function() {
           $('.btn').css("background-color", "#e1b67c");
@@ -76,13 +58,6 @@
           $('.btn').css("background-color", "#e1b67c");
           $(this).css("background-color", "#E0DB7C");
           $('.student').show(); //css("display", "none");
-        });
-        $('.student').hover( function () {
-          $(this).children('.profilePic').css("opacity", ".3");
-          $(this).children('.quote').css("display", "inline");
-        }, function () {
-          $(this).children('.profilePic').css("opacity", "1");
-          $(this).children('.quote').css("display", "none");
         });
       });
     </script>
