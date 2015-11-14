@@ -67,54 +67,19 @@
       </div>
       <% }); %>
 
-      <div class="interview_q">
-        <!--list of all questions to interview, render from database-->
-        <a class="q_a" href="#answer">
-          <h4>Q.1 Why did you first become a pastor?</h4>
-        </a>
-        <!-- add extra number to id and class-->
-        <a class="q_a2" href="#answer2">
-          <h4>Q.2 What is your current ministry</h4>
-        </a>
-
-      </div>
-
-      <div class="interview_a">
-        <br>
-        <!--list of all answers to interview, draw from database-->
-        <div class="answer" id="answer">
-                    <span class="response_q">
-                        Q.1 Why did you first become a pastor?
-                    </span>
-          <br>
-
-                    <span class="response_a">
-                        Show up yeaaa
-
-                        Specifies how to send the form-data (which HTTP method to use). Only for
-                        type="submit"
-                    </span>
+      <% student.interview.forEach(function(i) { %>
+        <div class="qa-pair">
+          <p class="question"><%= i.question %></p>
+          <p class="answer"><%= i.answer %></p>
         </div>
-        <br>
-        <!-- add extra number to id and class-->
-        <div class="answer2" id="answer2">
-          <span class="response_q">Q.2 What is your current ministry</span>
-          <br>
-                    <span class="response_a">
-                        Second answer to you questions (which HTTP method to use). Only for type="submit"
-                    </span>
-        </div>
-
-      </div>
-
+      <% }); %>
     </div>
-
-  </div>
   <!-- right bottom side-->
   <div class="col-md-4 middle">
     <a href="http://tmai.org/donate" class="hvr-grow support" target="_blank">
       SUPPORT
     </a>
+  </div>
   </div>
   </div>
   <%- include footer.ejs %>
