@@ -45,6 +45,10 @@
   <%- include footer.ejs %>
   <script type='text/javascript'>
       $(document).ready(function() {
+        $('.capa-title h1').hide();
+
+        $('.capa-title h1').fadeIn(800);
+
         $('.diploma-btn').on('click', function() {
           $('.btn').css("background-color", "#e1b67c");
           $(this).css("background-color", "#E0DB7C");

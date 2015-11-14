@@ -134,6 +134,9 @@ hr{
     text-decoration: underline;
     font-weight: bold;
 }
+.question:hover{
+    text-decoration: underline;
+}
 .response_a{
     margin: 2rem;
 

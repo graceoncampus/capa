@@ -75,8 +75,10 @@
       <% student.interview.forEach(function(i) { %>
         <div class="qa-pair">
           <p class="question"><%= i.question %></p>
+
           <p class="answer"><%= i.answer %></p>
         </div>
+
       <% }); %>
     </div>
     </div>
@@ -86,26 +88,20 @@
   <%- include footer.ejs %>
   <script>
 
-    $(document).ready(function(){
-      $(".header_name").slideToggle(800);
-      <!-- hide all answers and show all questions-->
-      $(".answer").hide();
-      $(".answer2").hide();
-      $(".q_a").show();
-      $(".q_a2").show();
-      <!-- once clicked, show the class-->
-      $(".q_a").click(function(){
-        $(".answer2").hide();
-        $(".answer").slideToggle();
+      $(document).ready(function(){
+        $('.container').hide();
 
-      });
-      $(".q_a2").click(function(){
+        $('.container').fadeIn(700);
         $(".answer").hide();
-        $(".answer2").slideToggle();
+        $('.question').on('click', function() {
+          $(".answer").hide();
+          $( this).parent().children('.answer').slideToggle();
+
+        });
 
       });
 
-    });
+
   </script>
 </body>
 </html>
