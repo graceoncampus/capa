@@ -63,6 +63,7 @@ footer a {
 .navbar a {
   color: #fff;
   text-decoration: none;
+  padding: .5em 0;
 }
 
 .nav>li>a,
@@ -70,4 +71,15 @@ footer a {
 .nav>li>a:hover,
 .nav>li>a:focus {
   background-color: #62abe1;
+}
+
+.navbar-brand img{
+  height: 100%;
+  width: inherit;
+
+  /*vertical-align: middle;*/
+}
+.icon-bar{
+  background-color: white;
+
 }
