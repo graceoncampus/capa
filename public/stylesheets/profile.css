@@ -61,8 +61,7 @@ hr{
     padding-top: 5rem;
 }
 .detail-list{
-
-
+    color: #47413C;
     display: inline;
     z-index: 2;
     list-style: none;
@@ -134,8 +133,16 @@ hr{
     text-decoration: underline;
     font-weight: bold;
 }
+.interview>h3{
+    text-transform: uppercase;
+}
 .question:hover{
     text-decoration: underline;
+}
+
+.question{
+    font-weight: bolder;
+    font-style: italic;
 }
 .response_a{
     margin: 2rem;
@@ -174,6 +181,7 @@ hr{
     display: block;
     font-size: 1.3rem;
     font-weight: 400;
+    color: #47413C;
 }
 #more-info{
     margin: 1rem 0 2rem 0;

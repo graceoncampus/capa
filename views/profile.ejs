@@ -17,7 +17,7 @@
       SUPPORT
     </a>
         <span id="quote">
-            <%= student.quote %>
+            "<%= student.quote %>"
         </span>
     <hr>
   </div>
@@ -91,8 +91,8 @@
 
         $('.container').fadeIn(700);
         $(".answer").hide();
-        $('.question').on('click', function() {
-          $(".answer").hide();
+        $( ".question" ).on('click', function() {
+          $( this).css('text-decoration', 'underline');
           $( this).parent().children('.answer').slideToggle();
 
         });
