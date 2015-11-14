@@ -7,81 +7,80 @@
 </head>
 <body>
   <%- include navbar.ejs %>
-<div class="header_name">
-  <div class="col-sm-offset-2 block-name">
-    <h1><%= student.name %></h1>
-  </div>
-
-</div>
-<!--left top side for profile pic-->
-<div class="col-md-8 middle" id="intro">
-  <img class="profilePic" src="<%= student.photoURI %>">
-  <a href="http://www.tmai.org/donate/" class="hvr-grow support mobile-ver" target="_blank">
+  <div class="container">
+  <div class="col-md-8 middle" id="intro">
+    <h1>
+      <%= student.name %>
+    </h1>
+    <img class="profilePic" src="<%= student.photoURI %>">
+    <a href="http://www.tmai.org/donate/" class="hvr-grow support mobile-ver" target="_blank">
       SUPPORT
-  </a>
-              <span id="quote">
-                  "<%= student.quote %>"
-              </span>
-
-  <hr>
-</div>
-
-<!--right top side for individual description data-->
-<div class="col-md-4 col-sm-12" id="details">
-
-  <div class="list">
-    <img class="map" src="http://phonebookoftheworld.com/bolivia/mapofbolivia.jpg">
-    <ul class="detail-list">
-      <li>
-        Program: <%= student.program %>
-      </li>
-      <li>
-        Age: <%= student.age %>
-      </li>
-      <li>
-        Hometown: <%= student.hometown %>
-      </li>
-      <li>
-        Family: <%= student.family %>
-      </li>
-    </ul>
+    </a>
+        <span id="quote">
+            "<%= student.quote %>"
+        </span>
+    <hr>
+  </div>
+  <!--right top side for individual description data-->
+  <div class="col-md-4 col-sm-12" id="details">
+    <div class="list">
+      <img class="map" src="/images/capa-map.png">
+      <ul class="detail-list">
+        <li>
+          Program: <%= student.program %>
+        </li>
+        <li>
+          Age: <%= student.age %>
+        </li>
+        <li>
+          Hometown: <%= student.hometown %>
+        </li>
+        <li>
+          Family: <%= student.family %>
+        </li>
+      </ul>
+    </div>
 
   </div>
-
-</div>
-<!-- left bottom side for individual description passage-->
-<div class="col-md-8 " id="indiv">
+  <!-- left bottom side for individual description passage-->
+  <div class="col-md-8 " id="indiv">
 
         <span id="more-info">
             <%= student.summary %>
+            With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf
          </span>
+    <hr>
 
-  <div class="interview">
-    <!-- person's name title-->
-    <h3>
-      Interview with <%= student.name %>
-    </h3>
+    <div class="interview">
+      <!-- person's name title-->
+      <h3>
+        Interview with <%= student.name %>
+      </h3>
 
-    <div class="interview_q">
-      <!--list of all questions to interview, render from database-->
-      <a class="q_a" href="#answer">
-        <h4>Q.1 Why did you first become a pastor?</h4>
-      </a>
-      <!-- add extra number to id and class-->
-      <a class="q_a2" href="#answer2">
-        <h4>Q.2 What is your current ministry</h4>
-      </a>
+      <div class="audio-style">
+       <audio controls src="/sounds/naruto.mp3" type="audio/naruto"> </audio>
+      </div>
 
-    </div>
+      <div class="interview_q">
+        <!--list of all questions to interview, render from database-->
+        <a class="q_a" href="#answer">
+          <h4>Q.1 Why did you first become a pastor?</h4>
+        </a>
+        <!-- add extra number to id and class-->
+        <a class="q_a2" href="#answer2">
+          <h4>Q.2 What is your current ministry</h4>
+        </a>
 
-    <div class="interview_a">
-      <br>
-      <!--list of all answers to interview, draw from database-->
-      <div class="answer" id="answer">
+      </div>
+
+      <div class="interview_a">
+        <br>
+        <!--list of all answers to interview, draw from database-->
+        <div class="answer" id="answer">
                     <span class="response_q">
                         Q.1 Why did you first become a pastor?
                     </span>
-        <br>
+          <br>
 
                     <span class="response_a">
                         Show up yeaaa
@@ -89,51 +88,52 @@
                         Specifies how to send the form-data (which HTTP method to use). Only for
                         type="submit"
                     </span>
-      </div>
-      <br>
-      <!-- add extra number to id and class-->
-      <div class="answer2" id="answer2">
-        <span class="response_q">Q.2 What is your current ministry</span>
+        </div>
         <br>
+        <!-- add extra number to id and class-->
+        <div class="answer2" id="answer2">
+          <span class="response_q">Q.2 What is your current ministry</span>
+          <br>
                     <span class="response_a">
                         Second answer to you questions (which HTTP method to use). Only for type="submit"
                     </span>
+        </div>
+
       </div>
 
     </div>
 
   </div>
+  <!-- right bottom side-->
+  <div class="col-md-4 middle">
+    <a href="http://tmai.org/donate" class="hvr-grow support" target="_blank">
+      SUPPORT
+    </a>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
 
-</div>
-<!-- right bottom side-->
-<div class="col-md-4 middle">
-  <a href="http://tmai.org/donate" class="hvr-grow support" target="_blank">
-    SUPPORT
-  </a>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-
-  $(document).ready(function(){
-    $(".header_name").slideToggle(800);
-    <!-- hide all answers and show all questions-->
-    $(".answer").hide();
-    $(".answer2").hide();
-    $(".q_a").show();
-    $(".q_a2").show();
-    <!-- once clicked, show the class-->
-    $(".q_a").click(function(){
-      $(".answer2").hide();
-      $(".answer").slideToggle();
-
-    });
-    $(".q_a2").click(function(){
+    $(document).ready(function(){
+      $(".header_name").slideToggle(800);
+      <!-- hide all answers and show all questions-->
       $(".answer").hide();
-      $(".answer2").slideToggle();
+      $(".answer2").hide();
+      $(".q_a").show();
+      $(".q_a2").show();
+      <!-- once clicked, show the class-->
+      $(".q_a").click(function(){
+        $(".answer2").hide();
+        $(".answer").slideToggle();
+
+      });
+      $(".q_a2").click(function(){
+        $(".answer").hide();
+        $(".answer2").slideToggle();
+
+      });
 
     });
-
-  });
-</script>
+  </script>
+  </div>
 </body>
 </html>
