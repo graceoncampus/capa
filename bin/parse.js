@@ -10,10 +10,10 @@ parse(data, function (err, output) {
             name: student[0],
             program: student[1],
             age: student[2],
-            location: student[4],
-            family: student[5],
-            quote: student[6],
-            summary: student[7],
+            location: student[3],
+            family: student[4],
+            quote: student[5],
+            summary: student[6],
             photoURI: ""
         });
 
