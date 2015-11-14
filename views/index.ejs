@@ -31,7 +31,7 @@
           <% students.forEach(function(s) { %>
           <div class="col-md-2 col-sm-4 student <%= s.program %>" >
             <div class="profilePic">
-              <a href="/profile/<%= s._id %>"><img src="/images/chris.jpg" class="img-responsive"></a>
+              <a href="/profile/<%= s._id %>"><img src="/images/<%= s.photoURI %>" class="img-responsive"></a>
             </div>
             <p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
           </div>

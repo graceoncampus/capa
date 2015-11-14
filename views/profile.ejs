@@ -12,12 +12,12 @@
     <h1>
       <%= student.name %>
     </h1>
-    <img class="profilePic" src="<%= student.photoURI %>">
+    <img class="profilePic" src="/images/<%= student.photoURI %>">
     <a href="http://www.tmai.org/donate/" class="hvr-grow support mobile-ver" target="_blank">
       SUPPORT
     </a>
         <span id="quote">
-            "<%= student.quote %>"
+            <%= student.quote %>
         </span>
     <hr>
   </div>
@@ -26,18 +26,23 @@
     <div class="list">
       <img class="map" src="/images/capa-map.png">
       <ul class="detail-list">
+        <% if (student.program != "") { %>
         <li>
           Program: <%= student.program %>
         </li>
+        <% } if (student.age != "") { %>
         <li>
           Age: <%= student.age %>
         </li>
+        <% } if (student.location != "") { %>
         <li>
-          Hometown: <%= student.hometown %>
+          Ministering in: <%= student.location %>
         </li>
+        <% } if (student.family != "") { %>
         <li>
           Family: <%= student.family %>
         </li>
+        <% } %>
       </ul>
     </div>
 
@@ -47,7 +52,6 @@
 
         <span id="more-info">
             <%= student.summary %>
-            With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf With all that is going on we need a paragarasadfasdfadf
          </span>
     <hr>
 
@@ -57,9 +61,11 @@
         Interview with <%= student.name %>
       </h3>
 
+      <% student.audio.forEach(function(URI) { %>
       <div class="audio-style">
-       <audio controls src="/sounds/naruto.mp3" type="audio/naruto"> </audio>
+       <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
       </div>
+      <% }); %>
 
       <div class="interview_q">
         <!--list of all questions to interview, render from database-->
@@ -110,7 +116,8 @@
       SUPPORT
     </a>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </div>
+  <%- include footer.ejs %>
   <script>
 
     $(document).ready(function(){
@@ -134,6 +141,5 @@
 
     });
   </script>
-  </div>
 </body>
 </html>
