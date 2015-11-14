@@ -4,11 +4,12 @@ var studentSchema = mongoose.Schema({
     name: String,
     program: String, // diploma, mdiv
     age: Number,
-    hometown: String,
+    location: String,
     family: String,
     quote: String,
     summary: String,
     photoURI: String,
+    audio: [String],
     interview: [{
         question: String,
         answer: String
