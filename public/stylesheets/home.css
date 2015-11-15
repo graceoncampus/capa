@@ -45,6 +45,8 @@ h2 {
 .student {
     margin: 1rem 0;
     display: inline;
+    width: 10em;
+    height: auto;
 }
 
 
