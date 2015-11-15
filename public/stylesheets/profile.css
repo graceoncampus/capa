@@ -55,7 +55,7 @@ hr{
     background-color: rgba(56, 56, 56, 0.83);
     padding: 2rem;
 }
-.container{
+.container-style{
 
     display: block;
     padding-top: 5rem;
@@ -84,10 +84,7 @@ hr{
     display: none;
 
 }
-.interview_a{
-    margin: 0 0 5rem 0;
-    font-size: initial;
-}
+
 .interview_title{
     text-align: center;
 }
@@ -125,28 +122,24 @@ hr{
     box-shadow: 0 0 8px rgba(0, 0, 0, .8);
     display: block;
 }
-.interview_q>a{
-    color: #7a6f67;
-    text-decoration: none;
-}
-.interview_q>a:hover{
-    text-decoration: underline;
-    font-weight: bold;
-}
+
 .interview>h3{
+    color: #47413C;
     text-transform: uppercase;
 }
 .question:hover{
     text-decoration: underline;
 }
 
-.question{
-    font-weight: bolder;
+.question {
+    color: #47413C;
+    font-weight: bold;
     font-style: italic;
 }
-.response_a{
-    margin: 2rem;
-
+.answer{
+    font-weight: normal;
+    font-size: smaller;
+    /*font-family: Georgia;*/
 }
 .support{
     font-weight: 900;

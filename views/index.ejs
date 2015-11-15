@@ -22,36 +22,33 @@
         Whether you partner with us financially or in prayer, we thank you for supporting the work that we do here. Please enjoy the student interviews, and join with us in praising our God for the work that He is doing here in Malawi!
         </p>
     </div>
-    <div class="container">
-      <div id="students">
+    <div class="container" id="students">
         <div class="row" id="meet-the-students">
           <h2>Meet the students</h2>
           <button class="btn btn-default diploma-btn">Diploma</button>
           <button class="btn btn-default mdiv-btn">Masters of divinity</button>
           <button class="btn btn-default show-all-btn">Show All</button>
         </div>
-        <div class="row">
-          <% students.forEach(function(s) { %>
-
-          <!--<% if (s.program == "Master of Divinity") { %>-->
-            <!--<div class="col-md-2 col-sm-4 student mdiv">-->
-          <!--<% } else if (s.program == "Advanced Diploma") { %>-->
-            <!--<div class="col-md-2 col-sm-4 student diploma">-->
-          <!--<% } %>-->
-            <!--<div class="profilePic">-->
-              <!--<a href="/profile/<%= s._id %>"><img src="/images/<%= s.photoURI %>" class="img-responsive"></a>-->
+          <div class="row">
+            <% students.forEach(function(s) { %>
+            <!--<% if (s.program == "Master of Divinity") { %>-->
+              <!--<div class="col-md-2 col-sm-4 student mdiv">-->
+            <!--<% } else if (s.program == "Advanced Diploma") { %>-->
+              <!--<div class="col-md-2 col-sm-4 student diploma">-->
+            <!--<% } %>-->
+              <!--<div class="profilePic">-->
+                <!--<a href="/profile/<%= s._id %>"><img src="/images/<%= s.photoURI %>" class="img-responsive"></a>-->
+              <!--</div>-->
+              <!--<p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>-->
             <!--</div>-->
-            <!--<p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>-->
-          <!--</div>-->
-
-          <div class="col-md-2 col-sm-4 student <%= s.program %>" >
-            <div class="profilePic">
-              <a href="/profile/<%= s._id %>"><img src="/images/chris.jpg" class="img-responsive"></a>
+            <div class="col-md-3 col-sm-6 col-xs-4 student <%= s.program %>" >
+              <div class="profilePic">
+                <a href="/profile/<%= s._id %>"><img src="/images/<%= s.photoURI %>" class="img-responsive"></a>
+              </div>
+              <p class="student-name"><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
             </div>
-            <p><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
+            <% }); %>
           </div>
-          <% }); %>
-        </div>
       </div>
     </div>
   <%- include footer.ejs %>

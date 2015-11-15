@@ -43,12 +43,12 @@ h2 {
 }
 
 .student {
-    margin: 1rem 0;
+    margin: 3rem 0;
     display: inline;
-    width: 10em;
-    height: auto;
 }
-
+.student-name{
+    max-height: 1rem;
+}
 
 
 #students img {

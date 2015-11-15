@@ -7,7 +7,7 @@
 </head>
 <body>
   <%- include navbar.ejs %>
-  <div class="container">
+  <div class="container container-style">
   <div class="col-md-8 middle" id="intro">
     <h1>
       <%= student.name %>
@@ -65,7 +65,7 @@
       <h3>
         Interview with <%= student.name %>
       </h3>
-
+      <br>
       <% student.audio.forEach(function(URI) { %>
       <div class="audio-style">
        <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
