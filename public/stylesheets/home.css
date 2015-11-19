@@ -29,7 +29,9 @@ h2 {
 
 
 #students h2 {
-    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 3rem;
+    margin-bottom: 2rem;
 }
 
 #students {
@@ -37,11 +39,20 @@ h2 {
 }
 
 #meet-the-students {
-    /*padding-top: 9%;*/
-    /*padding-bottom: 5rem;*/
-    padding: 9%;
+    margin-bottom: 3.5rem;
 }
-
+.diploma-btn{
+    margin-right: 6rem;
+}
+.mdiv-btn{
+    margin-right: 6rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.show-all-btn{
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+}
 .student {
     margin: 3rem 0;
     display: inline;

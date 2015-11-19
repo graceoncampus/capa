@@ -14,7 +14,6 @@
   </div>
 
 
-
     <div class="overlay" id="intro">
         <p>Thank you for taking the time to get to know our students! Below, you can find interviews of all of our students. In each student interview, you can find their individual prayer requests. Thank you for taking the time to pray for the Central African Preaching Academy, our professors, our staff, and our students.
         <br>
@@ -24,9 +23,9 @@
     </div>
     <div class="container" id="students">
         <div class="row" id="meet-the-students">
-          <h2>Meet the students</h2>
-          <button class="btn btn-default diploma-btn">Diploma</button>
-          <button class="btn btn-default mdiv-btn">Masters of divinity</button>
+          <h2>Meet the Students</h2>
+          <button class="btn btn-default diploma-btn">Advanced Diploma</button>
+          <button class="btn btn-default mdiv-btn">Master of Divinity</button>
           <button class="btn btn-default show-all-btn">Show All</button>
         </div>
           <div class="row">
@@ -70,7 +69,47 @@
           $('.student').show(); //css("display", "none");
         });
       });
-    </script>
+    $(document).ready(function() {
 
+      $(window).scroll(function () {
+
+        console.log($(window).scrollTop());
+        if ($(window).scrollTop() > $('.capa-title').height() ) {
+
+
+          $('.navbar a').css('color', '#62abe1');
+          $('.navbar').css('background-color', '#fff');
+          $('.nav a').css('background-color', '#fff');
+          $('.nav a :active').css('background-color', '#fff');
+          $('.nav a :focus').css('background-color', '#fff');
+          $('.nav a :hover').css('background-color', '#fff');
+
+          $('.navbar').css('transition', 'all 0.25s ease');
+          $('.nav a').css('transition', 'all 0.25s ease');
+        }
+        else if ( $(window).scrollTop() < $('.capa-title').height()) {
+
+          $('.navbar a').css('color', '#fff');
+          $('.navbar').css('background-color' ,'#62abe1');
+          $('.nav a').css('background-color', '#62abe1');
+          $('.nav a :active').css('background-color', ' #62abe1');
+          $('.nav a :focus').css('background-color', ' #62abe1');
+          $('.nav a :hover').css('background-color', ' #62abe1');
+          $('.navbar').css('transition', 'all 0.25s ease');
+          $('.nav a').css('transition', 'all 0.25s ease');
+        }
+        if( $(window).scrollTop() > ($(document).height()-$('#student').height()-$('footer').height())){
+          $('.navbar a').css('color', '#fff');
+          $('.navbar').css('background-color' ,'#62abe1');
+          $('.nav a').css('background-color', '#62abe1');
+          $('.nav a :active').css('background-color', ' #62abe1');
+          $('.nav a :focus').css('background-color', ' #62abe1');
+          $('.nav a :hover').css('background-color', ' #62abe1');
+          $('.navbar').css('transition', 'all 0.25s ease');
+          $('.nav a').css('transition', 'all 0.25s ease');
+        }
+      });
+    });
+  </script>
   </body>
 </html>
