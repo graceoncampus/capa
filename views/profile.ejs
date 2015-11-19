@@ -8,57 +8,76 @@
 <body>
   <%- include navbar.ejs %>
   <div class="container container-style">
-  <div class="col-md-8 middle" id="intro">
-    <h1>
-      <%= student.name %>
-    </h1>
-    <img class="profilePic" src="/images/<%= student.photoURI %>">
-    <a href="http://www.tmai.org/donate/" class="hvr-grow support mobile-ver" target="_blank">
-      SUPPORT
-    </a>
-        <span id="quote">
-            <%= student.quote %>
-        </span>
-    <hr>
-  </div>
-  <!--right top side for individual description data-->
-  <div class="col-md-4 col-sm-12" id="details">
-    <div class="list">
-      <img class="map" src="/images/capa-map.png">
-      <ul class="detail-list">
-        <% if (student.program != "") { %>
-        <li>
-          Program: <%= student.program %>
-        </li>
-        <% } if (student.age != "") { %>
-        <li>
-          Age: <%= student.age %>
-        </li>
-        <% } if (student.location != "") { %>
-        <li>
-          Ministering in: <%= student.location %>
-        </li>
-        <% } if (student.family != "") { %>
-        <li>
-          Family: <%= student.family %>
-        </li>
-        <% } %>
-      </ul>
+    <div class="row">
+      <h2>
+        <%= student.quote %>
+      </h2>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h1>
+          - <%= student.name %>
+        </h1>
+      </div>
+      <div class="col-md-8">
+        <li>
+          Program <%= student.program%>
+        </li>
+        <!--</li>-->
+        <!--<li>-->
+          <!--Age <%= student.age %>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--Ministering in <%= student.location %>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--Family <%= student.family%>-->
+        <!--</li>-->
+      </div>
 
-  </div>
-    <div class="col-md-4 middle">
-      <a href="http://tmai.org/donate" class="hvr-grow support desktop-ver" target="_blank">
-        SUPPORT
-      </a>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+          <img class="profilePic" src="/images/<%= student.photoURI %>">
+          <a href="http://tmai.org/donate" class="hvr-grow support desktop-ver" target="_blank">
+              SUPPORT
+          </a>
+      </div>
+      <div class="col-md-8">
+        <p>
+          <%= student.summary %>
+        </p>
+      </div>
+    </div>
+  <!--right top side for individual description data-->
+  <!--<div class="col-md-4 col-sm-12" id="details">-->
+    <!--<div class="list">-->
+      <!--<img class="map" src="/images/capa-map.png">-->
+      <!--<ul class="detail-list">-->
+        <!--<% if (student.program != "") { %>-->
+        <!--<li>-->
+          <!--Program: <%= student.program %>-->
+        <!--</li>-->
+        <!--<% } if (student.age != "") { %>-->
+        <!--<li>-->
+          <!--Age: <%= student.age %>-->
+        <!--</li>-->
+        <!--<% } if (student.location != "") { %>-->
+        <!--<li>-->
+          <!--Ministering in: <%= student.location %>-->
+        <!--</li>-->
+        <!--<% } if (student.family != "") { %>-->
+        <!--<li>-->
+          <!--Family: <%= student.family %>-->
+        <!--</li>-->
+        <!--<% } %>-->
+      <!--</ul>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
   <!-- left bottom side for individual description passage-->
   <div class="col-md-8 " id="indiv">
-
-        <span id="more-info">
-            <%= student.summary %>
-         </span>
-    <hr>
 
     <div class="interview">
       <!-- person's name title-->
