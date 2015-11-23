@@ -2,16 +2,33 @@ body{
     position: relative;
 }
 
+.thankyou{
+    text-align: center;
+    color: white;
+}
+.thank-img{
+    margin: 2rem 0 2rem 0;
+    color: white;
+}
+
 #intro {
-    background-color: #e7e9a3;
+    background-color: #62abe1;
     /*background-image: url(/images/capa.png);*/
     /*background-repeat: no-repeat;*/
     /*background-position: co;*/
     /*background-size: contain;*/
     height: auto;
-    padding: 9%;
+    padding: 3rem 8.5rem 4.5rem 8.5rem;
 }
-
+#intro p{
+    color: white;
+}
+.thankyou h1{
+    text-decoration: underline;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: .6rem;
+}
 /*#Intro p {*/
     /*margin-left: 30rem;*/
     /*padding: 4rem 5rem;*/
