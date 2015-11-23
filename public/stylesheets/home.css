@@ -1,12 +1,32 @@
-body{
+.navbar {
+    background-color: #62abe1;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.nav>li>a,
+.nav>li>a:active,
+.nav>li>a:hover,
+.nav>li>a:focus {
+    background-color: #62abe1;
+}
+
+.icon-bar{
+    background-color: #fff;
+}
+
+body {
     position: relative;
 }
 
-.thankyou{
+.thankyou {
     text-align: center;
     color: white;
 }
-.thank-img{
+
+.thank-img {
     margin: 2rem 0 2rem 0;
     color: white;
 }
@@ -19,36 +39,17 @@ body{
     /*background-size: contain;*/
     height: auto;
     padding: 3rem 8.5rem 4.5rem 8.5rem;
+    color: #fff;
 }
-#intro p{
-    color: white;
-}
-.thankyou h1{
-    text-decoration: underline;
+
+.thankyou h1 {
     font-weight: bolder;
-    color: white;
     padding-bottom: .6rem;
 }
-/*#Intro p {*/
-    /*margin-left: 30rem;*/
-    /*padding: 4rem 5rem;*/
-/*}*/
-
-p {
-    color: #5B5E53;
-}
-
-h1,
-h2 {
-    color: #5B5E53;
-}
-
-
 
 #students h2 {
     font-size: 3rem;
-    margin: 3rem;
-    margin-bottom: 2rem;
+    margin: 3rem 3rem 3rem 2rem;
 }
 
 #students {
@@ -58,18 +59,7 @@ h2 {
 #meet-the-students {
     margin-bottom: 3.5rem;
 }
-.diploma-btn{
-    margin-right: 6rem;
-}
-.mdiv-btn{
-    margin-right: 6rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-}
-.show-all-btn{
-    padding-right: 2.3rem;
-    padding-left: 2.3rem;
-}
+
 .student {
     margin: 3rem 0;
     display: inline;
@@ -79,30 +69,35 @@ h2 {
     position: relative;
     display: block;
 }
+
 .zero {
     background-color: #62ABE1;
 }
-.one{
+
+.one {
     background-color: #7A6F67;
 }
-.two{
+
+.two {
     background-color: #47413C;
 }
-.three{
+
+.three {
     background-color: #AD7118;
 }
-.student-name, .student-program{
-    position: absolute;
+
+.student-name,
+.student-program {
     text-align: left;
     font-weight: bold;
 }
+
 .student-program {
     top: 110%;
     font-size: 16px;
 }
 
-
-.student-quote{
+.student-quote {
     position: absolute;
     text-align: center;
     color: white;
@@ -113,12 +108,11 @@ h2 {
     right: 2.5%;
 }
 
-
 .btn.btn-default {
-    background-color: #e1b67c;
-    color: #ffffff;
+    background-color: #176ead;
+    color: #fff;
+    border-radius: 0;
 }
-
 
 .button {
     text-transform: uppercase;

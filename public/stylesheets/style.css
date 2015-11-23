@@ -2,9 +2,8 @@ html,
 body {
   font-family: Ubuntu, sans-serif;
   font-size: 20px;
-  color: #7a6f67;
+  color: #5B5E53;
 }
-
 
 /*@media screen and (min-width: 500px) {*/
   /*html,*/
@@ -48,7 +47,7 @@ footer {
 
 footer p,
 footer a {
-  color: #ffffff;
+  color: #fff;
 }
 
 .nav>li>a>img {
@@ -56,13 +55,13 @@ footer a {
 }
 
 .navbar {
-  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 10px;
-  background-color: #62abe1;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0 0 10px;
+  background-color: #fff;
   border: 0;
 }
 
 .navbar a {
-  color: #fff;
+  color: #62abe1;
   text-decoration: none;
   padding: .5em 0;
 }
@@ -71,19 +70,22 @@ footer a {
 .nav>li>a:active,
 .nav>li>a:hover,
 .nav>li>a:focus {
-  background-color: #62abe1;
+  background-color: #fff;
 }
 
 .navbar-brand img{
   height: 100%;
   width: inherit;
-
-  /*vertical-align: middle;*/
 }
+
+.navbar-brand img.capawhite {
+  display: none;
+}
+
 .icon-bar{
-  background-color: white;
-
+  background-color: #62abe1;
 }
+
 .capa-title{
   background-size: cover;
   width: 100%;
@@ -91,6 +93,7 @@ footer a {
   height: 36rem;
   background-image: url(../images/capa-background.jpg);
 }
+
 .capa-title h1{
   position: relative;
   top: 12rem;

@@ -64,15 +64,13 @@
         <% }); %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4 interview">
-        <% student.interview.forEach(function(i) { %>
+    <div class="row interview">
+      <% student.interview.forEach(function(i) { %>
         <div class="qa-pair">
           <p class="question"><%= i.question %></p>
           <p class="answer"><%- i.answer %></p>
         </div>
-          <% }); %>
-      </div>
+      <% }); %>
     </div>
 </div>
 

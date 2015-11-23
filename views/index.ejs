@@ -9,43 +9,36 @@
   <body>
   <%- include navbar.ejs %>
   <div class="capa-title">
-
     <h1>CAPA</h1>
   </div>
-
-
     <div class="overlay" id="intro">
         <div class="thankyou">
-          <h1>Thank you!</h1>
-          <h5>for Supporting our Student's Needs</h5>
+          <h2>Thank you!</h2>
+          <h3>for Supporting our Student's Needs</h3>
         </div>
       <div class="row thank-img">
-
-        <div class="col-xs-2 col-xs-offset-2">
+        <div class="col-md-3 col-sm-6">
           <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
           <h5>TEXTBOOKS</h5>
         </div>
-        <div class="col-xs-2">
+        <div class="col-md-3 col-sm-6">
           <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
           <h5>BREAKFAST + LUNCH</h5>
         </div>
-        <div class="col-xs-2">
+        <div class="col-md-3 col-sm-6">
           <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
           <h5>LIBRARY BOOKS + MAINTENANCE</h5>
         </div>
-
-        <div class="col-xs-2">
+        <div class="col-md-3 col-sm-6">
           <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
           <h5>RENT</h5>
         </div>
       </div>
-
         <p>Thank you for taking the time to get to know our students! Below, you can find interviews of all of our students. In each student interview, you can find their individual prayer requests. Thank you for taking the time to pray for the Central African Preaching Academy, our professors, our staff, and our students.
         <br>
         <br>
         Whether you partner with us financially or in prayer, we thank you for supporting the work that we do here. Please enjoy the student interviews, and join with us in praising our God for the work that He is doing here in Malawi!
         </p>
-
     </div>
     <div class="container" id="students">
         <div class="row" id="meet-the-students">
@@ -91,21 +84,23 @@
         $('.capa-title h1').fadeIn(800);
         $('.student-quote').hide();
 
+        $('.show-all-btn').css('background-color', '#62abe1');
+
         $('.diploma-btn').on('click', function() {
-          $('.btn').css("background-color", "#e1b67c");
-          $(this).css("background-color", "#E0DB7C");
+          $('.btn').css("background-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
           $('.student').hide();
           $('.diploma').show();
         });
         $('.mdiv-btn').on('click', function() {
-          $('.btn').css("background-color", "#e1b67c");
-          $(this).css("background-color", "#E0DB7C");
+          $('.btn').css("background-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
           $('.student').hide();
           $('.mdiv').show();
         });
         $('.show-all-btn').on('click', function() {
-          $('.btn').css("background-color", "#e1b67c");
-          $(this).css("background-color", "#E0DB7C");
+          $('.btn').css("background-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
           $('.student').show(); //css("display", "none");
         });
         $('.profilePic').hover(
@@ -117,42 +112,39 @@
             $( this ).children('.student-quote').hide();
           }
         );
+
+        $('.capablue').hide();
+        $('.capawhite').show();
+
+        $(window).scroll(function () {
+          if ($(window).scrollTop() > $('.capa-title').height()-$('.navbar').height() ) {
+            $('.navbar a').css('color', '#62abe1');
+            $('.navbar').css('background-color', '#fff');
+            $('.nav a').css('background-color', '#fff');
+            $('.nav a :active').css('background-color', '#fff');
+            $('.nav a :focus').css('background-color', '#fff');
+            $('.nav a :hover').css('background-color', '#fff');
+            $('.navbar').css('transition', 'all 0.25s ease');
+            $('.nav a').css('transition', 'all 0.25s ease');
+            $('.icon-bar').css('background-color', '#62abe1');
+            $('.capablue').show();
+            $('.capawhite').hide();
+          }
+          else if ( $(window).scrollTop() < $('.capa-title').height()-$('.navbar').height()) {
+            $('.navbar a').css('color', '#fff');
+            $('.navbar').css('background-color' ,'#62abe1');
+            $('.nav a').css('background-color', '#62abe1');
+            $('.nav a :active').css('background-color', ' #62abe1');
+            $('.nav a :focus').css('background-color', ' #62abe1');
+            $('.nav a :hover').css('background-color', ' #62abe1');
+            $('.navbar').css('transition', 'all 0.25s ease');
+            $('.nav a').css('transition', 'all 0.25s ease');
+            $('.icon-bar').css('background-color', '#fff');
+            $('.capablue').hide();
+            $('.capawhite').show();
+          }
+        });
       });
-    $(document).ready(function() {
-      $('.capablue').hide();
-      $(window).scroll(function () {
-
-        console.log($(window).scrollTop());
-        if ($(window).scrollTop() > $('.capa-title').height()-$('.navbar').height() ) {
-
-
-          $('.navbar a').css('color', '#62abe1');
-          $('.navbar').css('background-color', '#fff');
-          $('.nav a').css('background-color', '#fff');
-          $('.nav a :active').css('background-color', '#fff');
-          $('.nav a :focus').css('background-color', '#fff');
-          $('.nav a :hover').css('background-color', '#fff');
-          $('.navbar').css('transition', 'all 0.25s ease');
-          $('.nav a').css('transition', 'all 0.25s ease');
-          $('.capablue').show();
-          $('.capawhite').hide();
-        }
-        else if ( $(window).scrollTop() < $('.capa-title').height()-$('.navbar').height()) {
-
-          $('.navbar a').css('color', '#fff');
-          $('.navbar').css('background-color' ,'#62abe1');
-          $('.nav a').css('background-color', '#62abe1');
-          $('.nav a :active').css('background-color', ' #62abe1');
-          $('.nav a :focus').css('background-color', ' #62abe1');
-          $('.nav a :hover').css('background-color', ' #62abe1');
-          $('.navbar').css('transition', 'all 0.25s ease');
-          $('.nav a').css('transition', 'all 0.25s ease');
-          $('.capablue').hide();
-          $('.capawhite').show();
-        }
-
-      });
-    });
   </script>
   </body>
 </html>
