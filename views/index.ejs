@@ -30,17 +30,29 @@
           <button class="btn btn-default show-all-btn">Show All</button>
         </div>
           <div class="row">
-            <% students.forEach(function(s) { %>
+            <% students.forEach(function(s, i) { %>
               <% if (s.program == "Master of Divinity") { %>
               <div class="col-md-3 col-sm-6 col-xs-4 student mdiv" >
               <% } else { %>
               <div class="col-md-3 col-sm-6 col-xs-4 student diploma" >
               <% } %>
-                <a href="/profile/<%= s._id %>"><span class="profilePic">
+                <% var mod_four;
+                    if (i%4==0) {
+                      mod_four = "zero";
+                    } else if (i%4==1) {
+                      mod_four = "one";
+                    } else if (i%4==2){
+                      mod_four = "two";
+                    } else {
+                      mod_four = "three";
+                    }
+                %>
+                <a href="/profile/<%= s._id %>"><span class="profilePic <%= mod_four %>">
                   <img src="/images/<%= s.photoURI %>" class="img-responsive">
-                  <p class="student-name"><%= s.name %></p>
-                  <p class="student-quote"><%= s.quote.length > 10 ? s.quote.split(" ", 20).join(" ") + '..."' : s.quote %></p>
+                  <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '..."' : s.quote %></p>
                 </span></a>
+                <p class="student-name"><%= s.name %></p>
+                <p class="student-program"><%= s.program %></p>
               </div>
             <% }); %>
           </div>
@@ -52,7 +64,6 @@
         $('.capa-title h1').hide();
 
         $('.capa-title h1').fadeIn(800);
-        $('.student-name').hide();
         $('.student-quote').hide();
 
         $('.diploma-btn').on('click', function() {
@@ -74,12 +85,10 @@
         });
         $('.profilePic').hover(
           function() {
-            $(this).find('.img-responsive').css('opacity', '0.3');
-            $( this ).children('.student-name').show();
+            $(this).find('.img-responsive').css('opacity', '0');
             $( this ).children('.student-quote').show();
           }, function() {
             $(this).find('.img-responsive').css('opacity', '1');
-            $( this ).children('.student-name').hide();
             $( this ).children('.student-quote').hide();
           }
         );
