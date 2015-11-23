@@ -19,3 +19,10 @@ module.exports.getProfile = function(req, res) {
     });
   });
 };
+
+/* GET about page. */
+module.exports.getAbout = function(req, res) {
+  res.render('about', {
+    title: 'about'
+  });
+};
