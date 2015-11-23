@@ -8,100 +8,74 @@
 <body>
   <%- include navbar.ejs %>
   <div class="container container-style">
-    <div class="row">
+    <div class="row quote">
       <h2>
         <%= student.quote %>
       </h2>
+      <hr>
     </div>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="row title">
         <h1>
           - <%= student.name %>
         </h1>
-      </div>
-      <div class="col-md-8">
-        <li>
-          Program <%= student.program%>
-        </li>
-        <!--</li>-->
-        <!--<li>-->
-          <!--Age <%= student.age %>-->
-        <!--</li>-->
-        <!--<li>-->
-          <!--Ministering in <%= student.location %>-->
-        <!--</li>-->
-        <!--<li>-->
-          <!--Family <%= student.family%>-->
-        <!--</li>-->
-      </div>
-
+        <p>
+          <% if (student.program) { %>
+          Program: <%= student.program%> |
+          <% } if (student.age) { %>
+          Age: <%= student.age %> |
+          <% } if (student.location) { %>
+          Ministering in: <%= student.location %>
+          <% } if (student.location && student.family) { %>
+          |
+          <% } if (student.family) { %>
+          Family: <%= student.family %>
+          <% } %>
+        </p>
     </div>
+    <br>
+    <br>
     <div class="row">
       <div class="col-md-4">
           <img class="profilePic" src="/images/<%= student.photoURI %>">
-          <a href="http://tmai.org/donate" class="hvr-grow support desktop-ver" target="_blank">
+        <br>
+          <a href="http://tmai.org/donate" class="support" target="_blank">
               SUPPORT
           </a>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 summary">
         <p>
           <%= student.summary %>
         </p>
       </div>
     </div>
-  <!--right top side for individual description data-->
-  <!--<div class="col-md-4 col-sm-12" id="details">-->
-    <!--<div class="list">-->
-      <!--<img class="map" src="/images/capa-map.png">-->
-      <!--<ul class="detail-list">-->
-        <!--<% if (student.program != "") { %>-->
-        <!--<li>-->
-          <!--Program: <%= student.program %>-->
-        <!--</li>-->
-        <!--<% } if (student.age != "") { %>-->
-        <!--<li>-->
-          <!--Age: <%= student.age %>-->
-        <!--</li>-->
-        <!--<% } if (student.location != "") { %>-->
-        <!--<li>-->
-          <!--Ministering in: <%= student.location %>-->
-        <!--</li>-->
-        <!--<% } if (student.family != "") { %>-->
-        <!--<li>-->
-          <!--Family: <%= student.family %>-->
-        <!--</li>-->
-        <!--<% } %>-->
-      <!--</ul>-->
-    <!--</div>-->
-
-  <!--</div>-->
-
-  <!-- left bottom side for individual description passage-->
-  <div class="col-md-8 " id="indiv">
-
-    <div class="interview">
-      <!-- person's name title-->
-      <h3>
-        Interview with <%= student.name %>
-      </h3>
-      <br>
-      <% student.audio.forEach(function(URI) { %>
-      <div class="audio-style">
-       <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
+    <div class="row interview">
+        <br>
+        <hr>
+          <h3>Interview with <%= student.name %></h3>
+        <hr>
+      <div class="audio">
+        <% if (student.audio.length > 0) { %>
+        <h4>Listen to an interview with <%= student.name %></h4>
+        <% } %>
+        <% student.audio.forEach(function(URI) { %>
+        <div class="audio-style">
+          <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
+        </div>
+        <% }); %>
       </div>
-      <% }); %>
-
-      <% student.interview.forEach(function(i) { %>
+    </div>
+    <div class="row">
+      <div class="col-md-4 interview">
+        <% student.interview.forEach(function(i) { %>
         <div class="qa-pair">
           <p class="question"><%= i.question %></p>
           <p class="answer"><%- i.answer %></p>
         </div>
-      <% }); %>
+          <% }); %>
+      </div>
     </div>
-    </div>
-  <!-- right bottom side-->
+</div>
 
-  </div>
   <%- include footer.ejs %>
   <script>
 
