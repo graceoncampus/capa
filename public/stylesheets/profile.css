@@ -1,19 +1,55 @@
 /*can remove later*/
-.detail-list{
+.detail-list {
     right: 42%;
     font-size: 1.3rem;
 }
-.map{
-    right: 25%;
+
+p {
+    font-size: 1em;
+    color: #7a6f67;
 }
-.support{
+
+h1 {
+    color: #AD7118;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #7a6f67;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.description {
+    margin-top: 1em;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+.col-md-8 p,
+.col-md-8 li {
+    margin-left: 10%;
+}
+
+li {
+    list-style: none;
+    font-size: 0.75em;
+}
+
+.support {
     padding: 1rem 3rem;
 }
-.desktop-ver{
+
+.desktop-ver {
     display: none;
     visibility: hidden;
 }
-@media screen and (min-width: 1000px){
+
+@media screen and (min-width: 1000px) {
 
     .mobile-ver{
         display: inline;
@@ -44,23 +80,27 @@ hr{
     border-width: 4px 0 0 0;
     margin: 0;
 }
-.audio-style{
+
+.audio-style {
     margin: 1.2rem 0;
     text-align: center;
 }
-.btn{
-    margin-top: 5rem;
-}
-.block-name{
+
+/*.btn {*/
+    /*margin-top: 5rem;*/
+/*}*/
+
+.block-name {
     background-color: rgba(56, 56, 56, 0.83);
     padding: 2rem;
 }
-.container-style{
 
+.container-style {
     display: block;
     padding-top: 5rem;
 }
-.detail-list{
+
+.detail-list {
     color: #47413C;
     display: inline;
     z-index: 2;
@@ -69,64 +109,59 @@ hr{
 
     font-weight: 500;
     margin-top: 3rem;
-
 }
-.detail-list li{
+
+.detail-list li {
     margin-bottom: 2rem;
 }
-.header_name{
 
+.header_name {
     display: block;
     margin-bottom: 4rem;
     background-color: rgba(219, 143, 0, 0.52);
     text-transform: uppercase;
     color: white;
     display: none;
-
 }
 
-.interview_title{
+.interview_title {
     text-align: center;
 }
-.interview h3{
+
+.interview h3 {
     text-align: center;
 }
-.list{
+
+.list {
     margin-top: 5rem;
     display: inline;
     height: 20rem;
+}
 
-}
-.map{
-    position: absolute;
-    height: 25rem;
-    width: auto;
-    margin: auto;
-    display: inline;
-    opacity: .8;
-}
-.middle{
+.middle {
     text-align: center;
 }
 
-.mobile-ver{
+.mobile-ver {
     margin: 2rem 0 2rem 0;
 }
-.profilePic{
+
+.profilePic {
     margin: auto;
     position: relative;
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
-    border: #E0DB7C 6px solid;
+    border: #AD7118 6px solid;
     display: block;
 }
 
-.interview>h3{
+.interview>h3 {
     color: #47413C;
     text-transform: uppercase;
 }
-.question:hover{
+
+.question:hover {
     text-decoration: underline;
 }
 
@@ -135,38 +170,43 @@ hr{
     font-weight: bold;
     font-style: italic;
 }
-.answer{
+
+.answer {
     font-weight: normal;
     font-size: smaller;
     /*font-family: Georgia;*/
 }
-.support{
+
+.support {
     font-weight: 900;
     font-size: 1.4rem;
     border-radius: 10px;
-    background-color: rgba(219, 143, 0, 0.52);
-    color: #7a6f67;
+    background-color: #AD7118;
+    color: #fff;
     text-align: center;
 }
-.support:hover{
+
+.support:hover {
     text-decoration: none;
     color: #7a6f67;
 }
 
-#details{
+#details {
     display: block;
     text-align: center;
 }
-#indiv{
+
+#indiv {
     padding: 0 4rem 0 4rem;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-
 }
-#intro{
+
+#intro {
     padding: 0 4rem 0 4rem;
 }
-#quote{
+
+#quote {
     margin: 0 0 2rem 0;
     text-align: center;
     font-style: italic;
@@ -175,7 +215,8 @@ hr{
     font-weight: 400;
     color: #47413C;
 }
-#more-info{
+
+#more-info {
     margin: 1rem 0 2rem 0;
     display: block;
     font-size: 0.8rem;
