@@ -46,14 +46,45 @@ h2 {
     margin: 3rem 0;
     display: inline;
 }
-.student-name{
-    max-height: 1rem;
+
+.profilePic {
+    position: relative;
+    display: block;
+}
+.zero {
+    background-color: #62ABE1;
+}
+.one{
+    background-color: #7A6F67;
+}
+.two{
+    background-color: #47413C;
+}
+.three{
+    background-color: #AD7118;
+}
+.student-name, .student-program{
+    position: absolute;
+    text-align: left;
+    font-weight: bold;
+}
+.student-program {
+    top: 110%;
+    font-size: 16px;
 }
 
 
-#students img {
-    border-radius: 100%;
+.student-quote{
+    position: absolute;
+    text-align: center;
+    color: white;
+
+    top: 25%;
+    bottom: 0;
+    left: 2.5%;
+    right: 2.5%;
 }
+
 
 .btn.btn-default {
     background-color: #e1b67c;
