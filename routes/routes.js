@@ -26,3 +26,10 @@ module.exports.getAbout = function(req, res) {
     title: 'about'
   });
 };
+
+/* GET needs page. */
+module.exports.getNeeds = function(req, res) {
+  res.render('needs', {
+    title: 'needs'
+  });
+};
