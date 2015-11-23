@@ -14,17 +14,42 @@
   </div>
 
 
-
     <div class="overlay" id="intro">
+        <div class="thankyou">
+          <h1>Thank you!</h1>
+          <h5>for Supporting our Student's Needs</h5>
+        </div>
+      <div class="row thank-img">
+
+        <div class="col-xs-2 col-xs-offset-2">
+          <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
+          <h5>TEXTBOOKS</h5>
+        </div>
+        <div class="col-xs-2">
+          <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
+          <h5>BREAKFAST + LUNCH</h5>
+        </div>
+        <div class="col-xs-2">
+          <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
+          <h5>LIBRARY BOOKS + MAINTENANCE</h5>
+        </div>
+
+        <div class="col-xs-2">
+          <img class="img-responsive" src="http://cute-n-tiny.com/wp-content/uploads/2010/12/cute-cool-corgis.jpg"/>
+          <h5>RENT</h5>
+        </div>
+      </div>
+
         <p>Thank you for taking the time to get to know our students! Below, you can find interviews of all of our students. In each student interview, you can find their individual prayer requests. Thank you for taking the time to pray for the Central African Preaching Academy, our professors, our staff, and our students.
         <br>
         <br>
         Whether you partner with us financially or in prayer, we thank you for supporting the work that we do here. Please enjoy the student interviews, and join with us in praising our God for the work that He is doing here in Malawi!
         </p>
+
     </div>
     <div class="container" id="students">
         <div class="row" id="meet-the-students">
-          <h2>Meet the students</h2>
+          <h2>Meet the Students</h2>
           <button class="btn btn-default diploma-btn">Advanced Diploma</button>
           <button class="btn btn-default mdiv-btn">Master of Divinity</button>
           <button class="btn btn-default show-all-btn">Show All</button>
@@ -93,7 +118,41 @@
           }
         );
       });
-    </script>
+    $(document).ready(function() {
+      $('.capablue').hide();
+      $(window).scroll(function () {
 
+        console.log($(window).scrollTop());
+        if ($(window).scrollTop() > $('.capa-title').height()-$('.navbar').height() ) {
+
+
+          $('.navbar a').css('color', '#62abe1');
+          $('.navbar').css('background-color', '#fff');
+          $('.nav a').css('background-color', '#fff');
+          $('.nav a :active').css('background-color', '#fff');
+          $('.nav a :focus').css('background-color', '#fff');
+          $('.nav a :hover').css('background-color', '#fff');
+          $('.navbar').css('transition', 'all 0.25s ease');
+          $('.nav a').css('transition', 'all 0.25s ease');
+          $('.capablue').show();
+          $('.capawhite').hide();
+        }
+        else if ( $(window).scrollTop() < $('.capa-title').height()-$('.navbar').height()) {
+
+          $('.navbar a').css('color', '#fff');
+          $('.navbar').css('background-color' ,'#62abe1');
+          $('.nav a').css('background-color', '#62abe1');
+          $('.nav a :active').css('background-color', ' #62abe1');
+          $('.nav a :focus').css('background-color', ' #62abe1');
+          $('.nav a :hover').css('background-color', ' #62abe1');
+          $('.navbar').css('transition', 'all 0.25s ease');
+          $('.nav a').css('transition', 'all 0.25s ease');
+          $('.capablue').hide();
+          $('.capawhite').show();
+        }
+
+      });
+    });
+  </script>
   </body>
 </html>
