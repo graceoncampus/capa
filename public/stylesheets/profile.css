@@ -4,6 +4,46 @@
     font-size: 1.3rem;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+.quote h2{
+    text-align: left;
+}
+
+.qa-pair p:hover {
+    cursor: pointer;
+}
+
+.program {
+    margin-top: 1.7em;
+}
+
+.title {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.interview p {
+    text-align: left;
+}
+
+.program p {
+    font-size: 0.75em;
+}
+
+.audio {
+    margin-top: 2em;
+}
+
+.summary {
+    margin-top: 2em;
+}
+
 p {
     font-size: 1em;
     color: #7a6f67;
@@ -22,6 +62,10 @@ h2 {
     margin-bottom: 1em;
 }
 
+h3 {
+    text-transform: uppercase;
+}
+
 .description {
     margin-top: 1em;
 }
@@ -38,15 +82,11 @@ h2 {
 li {
     list-style: none;
     font-size: 0.75em;
+    font-weight: bold;
 }
 
 .support {
     padding: 1rem 3rem;
-}
-
-.desktop-ver {
-    display: none;
-    visibility: hidden;
 }
 
 @media screen and (min-width: 1000px) {
@@ -167,8 +207,7 @@ hr{
 
 .question {
     color: #47413C;
-    font-weight: bold;
-    font-style: italic;
+    font-size: 0.8em;
 }
 
 .answer {
@@ -186,38 +225,24 @@ hr{
     text-align: center;
 }
 
-.support:hover {
+.support:hover,
+.support:focus {
     text-decoration: none;
-    color: #7a6f67;
+    color: #fff;
 }
+
 
 #details {
     display: block;
     text-align: center;
 }
 
-#indiv {
-    padding: 0 4rem 0 4rem;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-
-#intro {
-    padding: 0 4rem 0 4rem;
-}
-
-#quote {
-    margin: 0 0 2rem 0;
-    text-align: center;
-    font-style: italic;
-    display: block;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #47413C;
-}
-
 #more-info {
     margin: 1rem 0 2rem 0;
     display: block;
     font-size: 0.8rem;
+}
+
+.footer:focus {
+    text-decoration: none;
 }
