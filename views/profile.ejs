@@ -63,33 +63,23 @@
       </div>
     </div>
     <div class="row interview">
-      <% student.interview.forEach(function(i) { %>
+      <% student.interview.forEach(function(i, index) { %>
         <div class="qa-pair">
           <p class="question"><%= i.question %></p>
-          <p class="answer"><%- i.answer %></p>
+          <p class="answer<%= (index == 0) ? " first-answer" : "" %>"><%- i.answer %></p>
         </div>
       <% }); %>
     </div>
 </div>
-
   <%- include footer.ejs %>
   <script>
-
       $(document).ready(function(){
-        $('.container').hide();
-
-        $('.container').fadeIn(700);
         $(".answer").hide();
-        $()
+        $(".first-answer").show();
         $( ".question" ).on('click', function() {
-//          $( this).css('text-decoration', 'underline');
-          $( this).parent().children('.answer').slideToggle();
-
+          $(this).parent().children('.answer').slideToggle();
         });
-
       });
-
-
   </script>
 </body>
 </html>
