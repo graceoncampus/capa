@@ -81,6 +81,12 @@
 
         $('.show-all-btn').css('background-color', '#62abe1');
 
+        var heights = $(".student").map(function() {
+            return $(this).height();
+          }).get();
+        var maxHeight = Math.max.apply(null, heights);
+        $(".student").height(maxHeight);
+
         $('.diploma-btn').on('click', function() {
           $('.btn').css("background-color", "#176ead");
           $(this).css("background-color", "#62abe1");
