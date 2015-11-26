@@ -1,4 +1,5 @@
 var Student = require('../models/student');
+var uriTemplate = require('uritemplate');
 
 /* GET home page. */
 module.exports.getHome = function(req, res) {
@@ -13,9 +14,12 @@ module.exports.getHome = function(req, res) {
 /* GET profile page. */
 module.exports.getProfile = function(req, res) {
   Student.findOne({ _id: req.params.sid }, function(err, student) {
+    var template = uriTemplate.parse('{?query*}');
+    var uri = template.expand({query: {recurring: 1, months: 1, recipient: 'CAPA', comments: student.name}});
     res.render('profile', {
       title: student.name,
-      student: student
+      student: student,
+      uri: uri
     });
   });
 };
