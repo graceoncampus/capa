@@ -79,8 +79,6 @@
       $(document).ready(function() {
         $('.student-quote').hide();
 
-        $('.show-all-btn').css('background-color', '#62abe1');
-
         var heights = $(".student").map(function() {
             return $(this).height();
           }).get();
@@ -115,11 +113,8 @@
           }
         );
 
-        $('.capablue').hide();
-        $('.capawhite').show();
-
         $(window).scroll(function () {
-          if ($(window).scrollTop() > $('.capa-title').height()-$('.navbar').height() ) {
+          if ($(window).scrollTop() > $('.capa-title').height()-$('.navbar').height()) {
             $('.navbar a').css('color', '#62abe1');
             $('.navbar').css('background-color', '#fff');
             $('.nav a').css('background-color', '#fff');
@@ -132,7 +127,7 @@
             $('.capablue').show();
             $('.capawhite').hide();
           }
-          else if ( $(window).scrollTop() < $('.capa-title').height()-$('.navbar').height()) {
+          else if ($(window).scrollTop() < $('.capa-title').height()-$('.navbar').height()) {
             $('.navbar a').css('color', '#fff');
             $('.navbar').css('background-color' ,'#62abe1');
             $('.nav a').css('background-color', '#62abe1');

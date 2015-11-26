@@ -63,6 +63,8 @@
       </div>
     </div>
     <div class="row interview">
+      <button class="btn btn-default show-all">Show All Answers</button>
+      <button class="btn btn-default hide-all">Hide All Answers</button>
       <% student.interview.forEach(function(i, index) { %>
         <div class="qa-pair">
           <p class="question"><%= i.question %></p>
@@ -74,10 +76,27 @@
   <%- include footer.ejs %>
   <script>
       $(document).ready(function(){
-        $(".answer").hide();
         $(".first-answer").show();
-        $( ".question" ).on('click', function() {
+        $(".question").on('click', function() {
           $(this).parent().children('.answer').slideToggle();
+          if ($(".answer:hidden").length != 0) {
+            $(".hide-all").hide();
+            $(".show-all").show();
+          }
+          if ($(".answer:hidden").length == 0) {
+            $(".show-all").hide();
+            $(".hide-all").show();
+          }
+        });
+        $(".show-all").on('click', function() {
+          $(".show-all").hide();
+          $(".hide-all").show();
+          $(".answer").fadeIn(200);
+        });
+        $(".hide-all").on('click', function() {
+          $(".hide-all").hide();
+          $(".show-all").show();
+          $(".answer").fadeOut(200);
         });
       });
   </script>
