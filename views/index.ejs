@@ -67,7 +67,7 @@
                 <img src="/images/<%= s.photoURI %>" class="img-responsive">
                 <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '..."' : s.quote %></p>
               </span></a>
-              <p class="student-name"><%= s.name %></p>
+              <p class="student-name"><a href="/profile/<%= s._id %>"><%= s.name %></a></p>
               <p class="student-program"><%= s.program %></p>
             </div>
           <% }); %>
