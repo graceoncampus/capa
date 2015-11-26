@@ -6,6 +6,14 @@
     color: #fff;
 }
 
+.navbar-brand img.capablue {
+    display: none;
+}
+
+.navbar-brand img.capawhite {
+    display: block;
+}
+
 .nav>li>a,
 .nav>li>a:active,
 .nav>li>a:hover,
@@ -120,15 +128,8 @@ body {
     bottom: 0;
     left: 2.5%;
     right: 2.5%;
-}
 
-.btn.btn-default {
-    background-color: #176ead;
-    color: #fff;
-    border-radius: 0;
-    margin: 0 0.5rem;
-    width: 200px;
-    text-transform: uppercase;
+    display: none;
 }
 
 .button {
@@ -137,4 +138,8 @@ body {
     margin-left:50%;
     margin-right:50%;
     bottom:  5px;
+}
+
+button.btn-default.show-all-btn {
+    background-color: #62abe1;
 }

@@ -1,4 +1,3 @@
-/*can remove later*/
 .detail-list {
     right: 42%;
     font-size: 1.3rem;
@@ -180,25 +179,35 @@ hr{
     text-transform: uppercase;
 }
 
+.btn.btn-default,
+.btn.btn-default:hover,
+.btn.btn-default:active,
+.btn.btn-default:focus {
+    margin-bottom: 20px;
+}
+
+.hide-all {
+    display: none;
+}
+
 .question:hover {
     text-decoration: underline;
 }
 
 .question {
-    color: #47413C;
+    color: #186EAD;
     font-size: 0.8em;
 }
 
 .answer {
     font-weight: normal;
     font-size: smaller;
-    /*font-family: Georgia;*/
+    display: none;
 }
 
 .support {
     font-weight: 900;
     font-size: 1.4rem;
-    border-radius: 10px;
     background-color: #AD7118;
     color: #fff;
     text-align: center;
@@ -210,7 +219,6 @@ hr{
     color: #fff;
 }
 
-
 #details {
     display: block;
     text-align: center;
@@ -220,8 +228,4 @@ hr{
     margin: 1rem 0 2rem 0;
     display: block;
     font-size: 0.8rem;
-}
-
-.footer:focus {
-    text-decoration: none;
 }

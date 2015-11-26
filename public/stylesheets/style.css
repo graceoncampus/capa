@@ -92,3 +92,15 @@ footer h3 {
 .navbar-spacer {
   margin-top: 50px;
 }
+
+.btn.btn-default,
+.btn.btn-default:hover,
+.btn.btn-default:active,
+.btn.btn-default:focus {
+  background-color: #176ead;
+  color: #fff;
+  border-radius: 0;
+  margin: 0 0.5rem;
+  width: 200px;
+  text-transform: uppercase;
+}
