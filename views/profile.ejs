@@ -30,13 +30,17 @@
       <div class="col-md-8 summary">
         <p>
           <% if (student.program) { %>
-          Program: <%= student.program%> |
+          Program: <%= student.program%>
+          <% } if (student.program && (student.age || student.location || student.family)) { %>
+          <br>
           <% } if (student.age) { %>
-          Age: <%= student.age %> |
+          Age: <%= student.age %>
+          <% } if (student.age && (student.location || student.family)) { %>
+          <br>
           <% } if (student.location) { %>
           Ministering in: <%= student.location %>
           <% } if (student.location && student.family) { %>
-          |
+          <br>
           <% } if (student.family) { %>
           Family: <%= student.family %>
           <% } %>
