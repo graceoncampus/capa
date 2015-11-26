@@ -86,18 +86,6 @@ footer a {
   background-color: #62abe1;
 }
 
-.capa-title{
-  background-size: cover;
-  width: 100%;
-  text-align: center;
-  height: 36rem;
-  background-image: url(../images/capa-background.jpg);
-}
-
-.capa-title h1{
-  position: relative;
-  top: 12rem;
-  color: white;
-  font-size: 10rem;
-
+.navbar-spacer {
+  margin-top: 5rem;
 }

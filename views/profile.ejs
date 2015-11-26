@@ -12,12 +12,23 @@
       <h2>
         <%= student.quote %>
       </h2>
-      <hr>
     </div>
     <div class="row title">
         <h1>
           - <%= student.name %>
         </h1>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+          <img class="profilePic" src="/images/<%= student.photoURI %>">
+        <br>
+          <a href="http://tmai.org/donate" class="support" target="_blank">
+              SUPPORT
+          </a>
+      </div>
+      <div class="col-md-8 summary">
         <p>
           <% if (student.program) { %>
           Program: <%= student.program%> |
@@ -31,18 +42,6 @@
           Family: <%= student.family %>
           <% } %>
         </p>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-md-4">
-          <img class="profilePic" src="/images/<%= student.photoURI %>">
-        <br>
-          <a href="http://tmai.org/donate" class="support" target="_blank">
-              SUPPORT
-          </a>
-      </div>
-      <div class="col-md-8 summary">
         <p>
           <%= student.summary %>
         </p>
@@ -82,6 +81,7 @@
 
         $('.container').fadeIn(700);
         $(".answer").hide();
+        $()
         $( ".question" ).on('click', function() {
 //          $( this).css('text-decoration', 'underline');
           $( this).parent().children('.answer').slideToggle();

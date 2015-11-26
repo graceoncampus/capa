@@ -2,9 +2,9 @@ var Student = require('../models/student');
 
 /* GET home page. */
 module.exports.getHome = function(req, res) {
-  Student.find({}, function(err, students) {
+  Student.find({ $query: {}, $orderby: { name : 1 } }, function(err, students) {
     res.render('index.ejs', {
-      title: 'home',
+      title: 'CAPA',
       students: students
     });
   });
@@ -14,7 +14,7 @@ module.exports.getHome = function(req, res) {
 module.exports.getProfile = function(req, res) {
   Student.findOne({ _id: req.params.sid }, function(err, student) {
     res.render('profile', {
-      title: 'profile',
+      title: student.name,
       student: student
     });
   });
@@ -23,13 +23,13 @@ module.exports.getProfile = function(req, res) {
 /* GET about page. */
 module.exports.getAbout = function(req, res) {
   res.render('about', {
-    title: 'about'
+    title: 'About CAPA'
   });
 };
 
 /* GET needs page. */
 module.exports.getNeeds = function(req, res) {
   res.render('needs', {
-    title: 'needs'
+    title: 'Our Needs'
   });
 };
