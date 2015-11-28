@@ -29,11 +29,18 @@ body {
     position: relative;
 }
 
-.capa-title{
-    margin-top: 50px;
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    height: 40rem;
+    height: 100%;
 }
 
 .thankyou {
