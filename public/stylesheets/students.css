@@ -1,0 +1,68 @@
+.student {
+    margin: 1rem 0;
+    display: inline;
+}
+
+.student-name {
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.profilePic {
+    position: relative;
+    display: block;
+}
+
+.zero {
+    background-color: #62ABE1;
+}
+
+.one {
+    background-color: #ba5e10;
+}
+
+.two {
+    background-color: #176ead;
+}
+
+.three {
+    background-color: #AD7118;
+}
+
+.student-name,
+.student-program {
+    text-align: left;
+    font-weight: bold;
+}
+
+.student-program {
+    top: 110%;
+    font-size: 0.75rem;
+    color: #7A6F67;
+}
+
+.student-quote {
+    position: absolute;
+    text-align: center;
+    color: white;
+
+    top: 25%;
+    bottom: 0;
+    left: 2.5%;
+    right: 2.5%;
+
+    display: none;
+}
+
+.button {
+    text-transform: uppercase;
+    position:absolute;
+    margin-left:50%;
+    margin-right:50%;
+    bottom:  5px;
+}
+
+button.btn-default.show-all-btn,
+button.btn-default.show-all-btn:hover {
+    background-color: #62abe1;
+}

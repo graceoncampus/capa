@@ -12,17 +12,15 @@
         <%= student.quote %>
       </h2>
     </div>
-    <div class="row title">
+    <div class="row name">
         <h1>
           - <%= student.name %>
         </h1>
     </div>
-    <br>
-    <br>
     <div class="row">
       <div class="col-md-4 profile-left">
         <div class="row">
-          <img class="profilePic" src="/images/<%= student.photoURI %>">
+          <img class="profilePic" src="/images/students/<%= student.photoURI %>">
         </div>
         <div class="row support-wrapper">
           <a href="https://www.tmai.org/donate/<%= uri %>" class="support" target="_blank">

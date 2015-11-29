@@ -59,12 +59,12 @@ footer h3 {
 
 .navbar {
   box-shadow: rgba(0, 0, 0, 0.0980392) 0 0 10px;
-  background-color: #fff;
+  background-color: #62abe1;
   border: 0;
 }
 
 .navbar a {
-  color: #62abe1;
+  color: #fff;
   text-decoration: none;
   padding: .5em 0;
 }
@@ -73,7 +73,7 @@ footer h3 {
 .nav>li>a:active,
 .nav>li>a:hover,
 .nav>li>a:focus {
-  background-color: #fff;
+  background-color: #62abe1;
 }
 
 .navbar-brand img{
@@ -81,12 +81,8 @@ footer h3 {
   width: inherit;
 }
 
-.navbar-brand img.capawhite {
-  display: none;
-}
-
 .icon-bar{
-  background-color: #62abe1;
+  background-color: #fff;
 }
 
 .navbar-spacer {
@@ -103,4 +99,14 @@ footer h3 {
   margin: 0 0.5rem;
   width: 200px;
   text-transform: uppercase;
+}
+
+.title h1 {
+  font-size: 3rem;
+  margin: 3rem 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3.5rem;
 }

@@ -27,10 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', routes);
 // app.use('/users', users);
 
-app.get('/', routes.getHome);
-app.get('/profile/:sid', routes.getProfile);
-app.get('/about', routes.getAbout);
-app.get('/needs', routes.getNeeds);
+app.get('/', routes.getAbout);
+app.get('/students', routes.getStudents);
+app.get('/students/:sid', routes.getProfile);
+// app.get('/needs', routes.getNeeds);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

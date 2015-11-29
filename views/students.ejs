@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include head.ejs %>
+  <link rel="stylesheet" href="/stylesheets/students.css">
+</head>
+<body>
+  <%- include navbar.ejs %>
+    <div class="container navbar-spacer" id="students">
+        <div class="row title">
+          <h1>Meet Our Students</h1>
+          <button class="btn btn-default diploma-btn">Advanced Diploma</button>
+          <button class="btn btn-default mdiv-btn">Master of Divinity</button>
+          <button class="btn btn-default show-all-btn">Show All</button>
+        </div>
+        <div class="row">
+          <% students.forEach(function(s, i) { %>
+            <% if (s.program == "Master of Divinity") { %>
+            <div class="col-md-3 col-sm-6 col-xs-4 student mdiv" >
+            <% } else { %>
+            <div class="col-md-3 col-sm-6 col-xs-4 student diploma" >
+            <% } %>
+              <% var mod_four;
+                  if (i%4==0) {
+                    mod_four = "zero";
+                  } else if (i%4==1) {
+                    mod_four = "one";
+                  } else if (i%4==2){
+                    mod_four = "two";
+                  } else {
+                    mod_four = "three";
+                  }
+              %>
+              <a href="/students/<%= s._id %>"><span class="profilePic <%= mod_four %>">
+                <img src="/images/students/<%= s.photoURI %>" class="img-responsive">
+                <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '..."' : s.quote %></p>
+              </span></a>
+              <p class="student-name"><a href="/students/<%= s._id %>"><%= s.name %></a></p>
+              <p class="student-program"><%= s.program %></p>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  <%- include footer.ejs %>
+  <script type='text/javascript'>
+      $(document).ready(function() {
+        $('.student-quote').hide();
+
+        $('.diploma-btn').on('click', function() {
+          $('.btn').css("background-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
+          $('.student').hide();
+          $('.diploma').fadeIn(600);
+        });
+        $('.mdiv-btn').on('click', function() {
+          $('.btn').css("background-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
+          $('.student').hide();
+          $('.mdiv').fadeIn(600);
+        });
+        $('.show-all-btn').on('click', function() {
+          $('.btn').css("background-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
+          $('.student').hide();
+          $('.student').fadeIn(600);
+        });
+        $('.profilePic').hover(
+          function() {
+            $(this).find('.img-responsive').css('opacity', '0');
+            $( this ).children('.student-quote').show();
+          }, function() {
+            $(this).find('.img-responsive').css('opacity', '1');
+            $( this ).children('.student-quote').hide();
+          }
+        );
+      });
+  </script>
+</body>
+</html>

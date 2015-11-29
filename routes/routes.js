@@ -1,11 +1,18 @@
 var Student = require('../models/student');
 var uriTemplate = require('uritemplate');
 
+/* GET about page. */
+module.exports.getAbout = function(req, res) {
+  res.render('about', {
+    title: 'About CAPA'
+  });
+};
+
 /* GET home page. */
-module.exports.getHome = function(req, res) {
+module.exports.getStudents = function(req, res) {
   Student.find({ $query: {}, $orderby: { name : 1 } }, function(err, students) {
-    res.render('index.ejs', {
-      title: 'CAPA',
+    res.render('students.ejs', {
+      title: 'CAPA Students',
       students: students
     });
   });
@@ -17,17 +24,10 @@ module.exports.getProfile = function(req, res) {
     var template = uriTemplate.parse('{?query*}');
     var uri = template.expand({query: {recurring: 1, months: 1, recipient: 'CAPA', comments: student.name}});
     res.render('profile', {
-      title: student.name,
+      title: 'CAPA: ' + student.name,
       student: student,
       uri: uri
     });
-  });
-};
-
-/* GET about page. */
-module.exports.getAbout = function(req, res) {
-  res.render('about', {
-    title: 'About CAPA'
   });
 };
 
