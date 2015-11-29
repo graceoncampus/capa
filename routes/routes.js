@@ -37,3 +37,10 @@ module.exports.getNeeds = function(req, res) {
     title: 'Our Needs'
   });
 };
+
+/* GET read page. */
+module.exports.getRead = function(req, res) {
+  res.render('read', {
+    title: 'Help Read Student Papers'
+  });
+};

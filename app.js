@@ -31,6 +31,7 @@ app.get('/', routes.getAbout);
 app.get('/students', routes.getStudents);
 app.get('/students/:sid', routes.getProfile);
 // app.get('/needs', routes.getNeeds);
+app.get('/help-read-student-papers', routes.getRead);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
