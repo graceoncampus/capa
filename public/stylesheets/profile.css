@@ -188,6 +188,11 @@ hr{
     display: block;
 }
 
+.interview {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 .interview>h3 {
     color: #47413C;
     text-transform: uppercase;

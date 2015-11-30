@@ -34,13 +34,20 @@ module.exports.getProfile = function(req, res) {
 /* GET needs page. */
 module.exports.getNeeds = function(req, res) {
   res.render('needs', {
-    title: 'Our Needs'
+    title: 'CAPA\'s Needs'
   });
 };
 
 /* GET read page. */
 module.exports.getRead = function(req, res) {
   res.render('read', {
-    title: 'Help Read Student Papers'
+    title: 'Get Involved With CAPA'
+  });
+};
+
+/* GET newsletters page. */
+module.exports.getNewsletters = function(req, res) {
+  res.render('newsletters', {
+    title: 'CAPA Newsletters'
   });
 };
