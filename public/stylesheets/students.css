@@ -32,7 +32,7 @@
 .student-name,
 .student-program {
     text-align: left;
-    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 .student-program {
@@ -43,13 +43,14 @@
 
 .student-quote {
     position: absolute;
-    text-align: center;
     color: white;
+    font-size: 1.3rem;
+    line-height: 120%;
 
-    top: 25%;
+    top: 5%;
     bottom: 0;
-    left: 2.5%;
-    right: 2.5%;
+    left: 5%;
+    right: 5%;
 
     display: none;
 }

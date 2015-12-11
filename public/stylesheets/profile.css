@@ -27,10 +27,6 @@ a:hover {
     margin-top: 1.7em;
 }
 
-h4 {
-    text-align: center;
-}
-
 .interview p {
     text-align: left;
 }
@@ -115,7 +111,6 @@ hr{
 
 .audio-style {
     margin: 1.2rem 0;
-    text-align: center;
 }
 
 /*.btn {*/
@@ -156,8 +151,8 @@ hr{
     display: none;
 }
 
-.interview_title {
-    text-align: center;
+.interview-title {
+    margin-bottom: 2rem;
 }
 
 .interview h3 {
@@ -188,14 +183,10 @@ hr{
     display: block;
 }
 
-.interview {
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
 .interview>h3 {
     color: #47413C;
     text-transform: uppercase;
+    text-align: left;
 }
 
 .btn.btn-default,
@@ -215,17 +206,16 @@ hr{
 
 .question {
     color: #186EAD;
-    font-size: 0.8em;
+    font-weight: 500;
 }
 
 .answer {
     font-weight: normal;
-    font-size: smaller;
     display: none;
+    margin-bottom: 2rem;
 }
 
 .support {
-    font-weight: 900;
     font-size: 1.4rem;
     background-color: #AD7118;
     color: #fff;
@@ -247,4 +237,14 @@ hr{
     margin: 1rem 0 2rem 0;
     display: block;
     font-size: 0.8rem;
+}
+
+.pipe {
+    color: #e1b67c;
+}
+
+a.show-all,
+a.hide-all {
+    color: gray;
+    cursor: pointer;
 }

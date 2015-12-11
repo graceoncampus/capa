@@ -8,12 +8,12 @@
   <%- include navbar.ejs %>
   <div class="container container-style">
     <div class="row quote">
-      <h2>
+      <h2 class="font-light">
         <%= student.quote %>
       </h2>
     </div>
     <div class="row name">
-        <h1>
+        <h1 class="font-light">
           - <%= student.name %>
         </h1>
     </div>
@@ -23,7 +23,7 @@
           <img class="profilePic" src="/images/students/<%= student.photoURI %>">
         </div>
         <div class="row support-wrapper">
-          <a href="https://www.tmai.org/donate/<%= uri %>" class="support" target="_blank">
+          <a href="https://www.tmai.org/donate/<%= uri %>" class="support font-light" target="_blank">
             SUPPORT
           </a>
         </div>
@@ -34,51 +34,53 @@
       <div class="col-md-8 summary">
         <p>
           <% if (student.program) { %>
-          Program: <%= student.program%>
+          <b>PROGRAM</b> <span class="pipe">|</span> <%= student.program%>
           <% } if (student.program && (student.age || student.location || student.family)) { %>
           <br>
           <% } if (student.age) { %>
-          Age: <%= student.age %>
+          <b>AGE</b> <span class="pipe">|</span> <%= student.age %>
           <% } if (student.age && (student.location || student.family)) { %>
           <br>
           <% } if (student.location) { %>
-          Ministering in: <%= student.location %>
+          <b>MINISTERING IN</b> <span class="pipe">|</span> <%= student.location %>
           <% } if (student.location && student.family) { %>
           <br>
           <% } if (student.family) { %>
-          Family: <%= student.family %>
+          <b>FAMILY</b> <span class="pipe">|</span> <%= student.family %>
           <% } %>
         </p>
         <p>
           <%= student.summary %>
         </p>
-      </div>
-    </div>
-    <div class="row interview">
-        <br>
-        <hr>
-          <h3>Interview with <%= student.name %></h3>
-        <hr>
-      <div class="audio">
-        <% if (student.audio.length > 0) { %>
-        <h4>Listen to an interview with <%= student.name %></h4>
-        <% } %>
-        <% student.audio.forEach(function(URI) { %>
-        <div class="audio-style">
-          <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
+        <div class="audio">
+          <% if (student.audio.length > 0) { %>
+          <p><b>LISTEN</b> <span class="pipe">|</span> Interview with <%= student.name %></p>
+          <% } %>
+          <% student.audio.forEach(function(URI) { %>
+          <div class="audio-style">
+            <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
+          </div>
+          <% }); %>
         </div>
-        <% }); %>
       </div>
     </div>
-    <div class="row interview">
-      <button class="btn btn-default show-all">Show All Answers</button>
-      <button class="btn btn-default hide-all">Hide All Answers</button>
-      <% student.interview.forEach(function(i, index) { %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-4 interview interview-title">
+        <hr>
+        <h3>Interview with <%= student.name %></h3>
+        <a class="show-all">Show All Answers</a>
+        <a class="hide-all">Hide All Answers</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-4 interview">
+        <% student.interview.forEach(function(i, index) { %>
         <div class="qa-pair">
           <p class="question"><%= i.question %></p>
           <p class="answer<%= (index == 0) ? " first-answer" : "" %>"><%- i.answer %></p>
         </div>
-      <% }); %>
+        <% }); %>
+      </div>
     </div>
 </div>
   <%- include footer.ejs %>
