@@ -2,8 +2,6 @@
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
 }
 .video-wrapper iframe {
     position: absolute;
@@ -15,4 +13,33 @@
 
 .tmai-logo {
     width: 12rem;
+}
+
+section.mission {
+    margin-bottom: 5rem;
+    padding: 4rem;
+    background-color: rgb(242, 241, 235);
+}
+
+.subtitle h2 {
+    font-size: 4rem;
+}
+
+.description {
+    font-size: 1.3rem;
+}
+
+section.learn-more {
+    margin-top: 5rem;
+    background-color: #47413C;
+    padding: 5em;
+}
+
+section.learn-more p {
+    color: #fff;
+    font-size: 2rem;
+}
+
+section.learn-more a {
+    color: #62ABE1;
 }

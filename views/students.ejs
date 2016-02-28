@@ -48,26 +48,38 @@
         $('.student-quote').hide();
 
         $('.diploma-btn').on('click', function() {
-          $('.btn').css("background-color", "#176ead");
+          $('.btn').css("background-color", "transparent");
+          $('.btn').css("color", "#176ead");
+          $('.btn').css("border-color", "#176ead");
           $(this).css("background-color", "#62abe1");
+          $(this).css("color", "#fff");
+          $(this).css("border-color", "#62abe1");
           $('.student').hide();
           $('.diploma').fadeIn(600);
         });
         $('.mdiv-btn').on('click', function() {
-          $('.btn').css("background-color", "#176ead");
+          $('.btn').css("background-color", "transparent");
+          $('.btn').css("color", "#176ead");
+          $('.btn').css("border-color", "#176ead");
           $(this).css("background-color", "#62abe1");
+          $(this).css("color", "#fff");
+          $(this).css("border-color", "#62abe1");
           $('.student').hide();
           $('.mdiv').fadeIn(600);
         });
         $('.show-all-btn').on('click', function() {
-          $('.btn').css("background-color", "#176ead");
+          $('.btn').css("background-color", "transparent");
+          $('.btn').css("color", "#176ead");
+          $('.btn').css("border-color", "#176ead");
           $(this).css("background-color", "#62abe1");
+          $(this).css("color", "#fff");
+          $(this).css("border-color", "#62abe1");
           $('.student').hide();
           $('.student').fadeIn(600);
         });
         $('.profilePic').hover(
           function() {
-            $(this).find('.img-responsive').css('opacity', '0');
+            $(this).find('.img-responsive').css('opacity', '0.4');
             $( this ).children('.student-quote').show();
           }, function() {
             $(this).find('.img-responsive').css('opacity', '1');

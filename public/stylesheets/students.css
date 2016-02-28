@@ -1,3 +1,7 @@
+body {
+    background-color: #f2f1eb;
+}
+
 .student {
     margin: 1rem 0;
     display: inline;
@@ -6,6 +10,10 @@
 .student-name {
     margin-top: 8px;
     margin-bottom: 2px;
+}
+
+.student-name a {
+    color: #808080;
 }
 
 .profilePic {
@@ -32,7 +40,7 @@
 .student-name,
 .student-program {
     text-align: left;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .student-program {
@@ -66,4 +74,6 @@
 button.btn-default.show-all-btn,
 button.btn-default.show-all-btn:hover {
     background-color: #62abe1;
+    color: #fff;
+    border-color: #62abe1;
 }
