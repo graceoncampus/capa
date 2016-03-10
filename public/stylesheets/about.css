@@ -17,7 +17,8 @@
 
 section.mission {
     margin-bottom: 5rem;
-    padding: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background-color: rgb(242, 241, 235);
 }
 
