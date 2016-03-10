@@ -77,15 +77,17 @@
           $('.student').hide();
           $('.student').fadeIn(600);
         });
-        $('.profilePic').hover(
-          function() {
-            $(this).find('.img-responsive').css('opacity', '0.4');
-            $( this ).children('.student-quote').show();
-          }, function() {
-            $(this).find('.img-responsive').css('opacity', '1');
-            $( this ).children('.student-quote').hide();
-          }
-        );
+        if ($(window).width() >= 768) {
+          $('.profilePic').hover(
+            function() {
+              $(this).find('.img-responsive').css('opacity', '0.4');
+              $( this ).children('.student-quote').show();
+            }, function() {
+              $(this).find('.img-responsive').css('opacity', '1');
+              $( this ).children('.student-quote').hide();
+            }
+          );
+        }
       });
   </script>
 </body>

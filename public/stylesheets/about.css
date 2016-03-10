@@ -44,3 +44,7 @@ section.learn-more p {
 section.learn-more a {
     color: #62ABE1;
 }
+
+footer {
+    margin-top: 0;
+}
