@@ -32,6 +32,7 @@ app.get('/students', routes.getStudents);
 app.get('/students/:sid', routes.getProfile);
 app.get('/needs', routes.getNeeds);
 app.get('/newsletters', routes.getNewsletters);
+app.get('/librarybooks', routes.getBooks);
 app.get('/readpapers', routes.getRead);
 
 // catch 404 and forward to error handler

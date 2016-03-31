@@ -38,6 +38,13 @@ module.exports.getNeeds = function(req, res) {
   });
 };
 
+/* GET books page. */
+module.exports.getBooks = function(req, res) {
+  res.render('books', {
+    title: 'Donate Books'
+  });
+};
+
 /* GET read page. */
 module.exports.getRead = function(req, res) {
   res.render('read', {
