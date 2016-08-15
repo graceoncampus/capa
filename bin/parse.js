@@ -27,8 +27,16 @@ parse(data, function (err, output) {
             }
         });
 
+        s.audioTaglines = [];
+        var audioTaglines = student.slice(10, 12);
+        audioTaglines.forEach(function(tagline) {
+            if (tagline != "") {
+                s.audioTaglines.push(tagline);
+            }
+        });
+
         s.interview = [];
-        var interview = student.slice(10);
+        var interview = student.slice(12);
         for (var i = 1; i < interview.length; i += 2) {
             if (interview[i-1] != "" && interview[i] != "") {
                 s.interview.push({

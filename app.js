@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.getAbout);
 app.get('/students', routes.getStudents);
-app.get('/students/:sid', routes.getProfile);
+app.get('/students/:name', routes.getProfile);
 app.get('/needs', routes.getNeeds);
 app.get('/newsletters', routes.getNewsletters);
 app.get('/librarybooks', routes.getBooks);

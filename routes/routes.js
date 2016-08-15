@@ -11,6 +11,10 @@ module.exports.getAbout = function(req, res) {
 /* GET home page. */
 module.exports.getStudents = function(req, res) {
   Student.find({ $query: {}, $orderby: { name : 1 } }, function(err, students) {
+    if (err || students == null) {
+      res.redirect('/');
+      return;
+    }
     res.render('students.ejs', {
       title: 'CAPA Students',
       students: students
@@ -20,7 +24,11 @@ module.exports.getStudents = function(req, res) {
 
 /* GET profile page. */
 module.exports.getProfile = function(req, res) {
-  Student.findOne({ _id: req.params.sid }, function(err, student) {
+  Student.findOne({ name: req.params.name }, function(err, student) {
+    if (err || student == null) {
+      res.redirect('/students');
+      return;
+    }
     var template = uriTemplate.parse('{?query*}');
     var uri = template.expand({query: {recurring: 1, months: 1, recipient: 'CAPA', comments: student.name}});
     res.render('profile', {

@@ -31,11 +31,11 @@
                     mod_four = "three";
                   }
               %>
-              <a href="/students/<%= s._id %>"><span class="profilePic <%= mod_four %>">
+              <a href="/students/<%= s.name %>"><span class="profilePic <%= mod_four %>">
                 <img src="/images/students/<%= s.photoURI %>" class="img-responsive">
-                <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '..."' : s.quote %></p>
+                <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '...”' : s.quote %></p>
               </span></a>
-              <p class="student-name"><a href="/students/<%= s._id %>"><%= s.name %></a></p>
+              <p class="student-name"><a href="/students/<%= s.name %>"><%= s.name %></a></p>
               <p class="student-program"><%= s.program %></p>
             </div>
           <% }); %>
