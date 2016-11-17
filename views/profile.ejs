@@ -59,7 +59,7 @@
           <% student.audio.forEach(function(URI, i) { %>
           <div class="audio-style">
             <p><%= student.audioTaglines[i] %></p>
-            <audio controls src="http://googledrive.com/host/<%= URI %>" type="audio/wav"></audio>
+            <audio controls src="<%= URI %>" type="audio/wav"></audio>
           </div>
           <% }); %>
         </div>

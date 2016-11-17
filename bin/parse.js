@@ -10,17 +10,17 @@ parse(data, function (err, output) {
     output.forEach(function (student) {
         var s = new Student ({
             name: student[0],
-            photoURI: student[1],
-            program: student[2],
-            age: student[3],
-            location: student[4],
-            family: student[5],
-            quote: student[6],
-            summary: student[7]
+            photoURI: student[3],
+            program: student[4],
+            age: student[5],
+            location: student[6],
+            family: student[7],
+            quote: student[8],
+            summary: student[9]
         });
 
         s.audio = [];
-        var audio = student.slice(8, 10);
+        var audio = student.slice(10, 12);
         audio.forEach(function(URI) {
             if (URI != "") {
                 s.audio.push(URI);
@@ -28,7 +28,7 @@ parse(data, function (err, output) {
         });
 
         s.audioTaglines = [];
-        var audioTaglines = student.slice(10, 12);
+        var audioTaglines = student.slice(12, 14);
         audioTaglines.forEach(function(tagline) {
             if (tagline != "") {
                 s.audioTaglines.push(tagline);
@@ -36,7 +36,7 @@ parse(data, function (err, output) {
         });
 
         s.interview = [];
-        var interview = student.slice(12);
+        var interview = student.slice(14);
         for (var i = 1; i < interview.length; i += 2) {
             if (interview[i-1] != "" && interview[i] != "") {
                 s.interview.push({
