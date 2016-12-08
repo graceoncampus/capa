@@ -9,13 +9,13 @@
     <div class="container navbar-spacer" id="students">
         <div class="row title">
           <h1>Meet Our Students</h1>
-          <button class="btn btn-default diploma-btn">Advanced Diploma</button>
           <button class="btn btn-default mdiv-btn">Master of Divinity</button>
+          <button class="btn btn-default diploma-btn">Graduates</button>
           <button class="btn btn-default show-all-btn">Show All</button>
         </div>
         <div class="row">
-          <% students.forEach(function(s, i) { %>
-            <% if (s.program == "Master of Divinity") { %>
+          <% students.forEach(function(s, i) { console.log(s.name, s.status); %>
+            <% if (s.status == "Current") { %>
             <div class="col-md-3 col-sm-6 col-xs-4 student mdiv" >
             <% } else { %>
             <div class="col-md-3 col-sm-6 col-xs-4 student diploma" >
