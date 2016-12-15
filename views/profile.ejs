@@ -6,110 +6,182 @@
 </head>
 <body>
   <%- include navbar.ejs %>
-  <div class="container container-style">
-    <div class="row quote">
-      <h2 class="font-light">
-        <%= student.quote %>
-      </h2>
-    </div>
-    <div class="row name">
-        <h1 class="font-light">
-          - <%= student.name %>
-        </h1>
-    </div>
-    <div class="row">
-      <div class="col-md-4 profile-left">
-        <div class="row">
-          <img class="profilePic" src="/images/students/<%= student.photoURI %>">
+  <div class="container">
+    <section id="main">
+      <div class="row photo-quote">
+        <div class="col-sm-3 profile-pic">
+          <img src="/images/students/<%= student.photoURI %>" class="img-responsive">
         </div>
-        <div class="row support-wrapper">
-          <a href="https://tmai.org/donate/<%= uri %>" class="support font-light" target="_blank">
-            SUPPORT
-          </a>
-        </div>
-        <div class="row">
-          <p>$100 per month provides a pastor a scholarship to study at CAPA.</p>
+        <div class="col-sm-9 quote">
+          <h2><%= student.quote %></h2>
         </div>
       </div>
-      <div class="col-md-8 summary">
-        <p>
-          <% if (student.program) { %>
-          <b>PROGRAM</b> <span class="pipe">|</span> <%= student.program%>
-          <% } if (student.program && (student.age || student.location || student.family)) { %>
-          <br>
-          <% } if (student.age) { %>
-          <b>AGE</b> <span class="pipe">|</span> <%= student.age %>
-          <% } if (student.age && (student.location || student.family)) { %>
-          <br>
-          <% } if (student.location) { %>
-          <b>MINISTERING IN</b> <span class="pipe">|</span> <%= student.location %>
-          <% } if (student.location && student.family) { %>
-          <br>
-          <% } if (student.family) { %>
-          <b>FAMILY</b> <span class="pipe">|</span> <%= student.family %>
-          <% } %>
-        </p>
-        <p>
-          <%= student.summary %>
-        </p>
-        <div class="audio">
-          <% if (student.audio.length > 0) { %>
-          <p><b>LISTEN</b> <span class="pipe">|</span> Interview with <%= student.name %></p>
-          <% } %>
+      <div class="row profile-info">
+        <div class="col-md-3">
+          <h1 class="profile-name"><%= student.name %></h1>
+          <div class="profile-stats">
+            <p>
+            <% if (student.program) { %>
+            <b>Program</b> <%= student.program%>
+            <% } if (student.program && (student.age || student.location || student.family)) { %>
+            <br>
+            <% } if (student.age) { %>
+            <b>Age</b> <%= student.age %>
+            <% } if (student.age && (student.location || student.family)) { %>
+            <br>
+            <% } if (student.location) { %>
+            <b>Ministering in</b> <%= student.location %>
+            <% } if (student.location && student.family) { %>
+            <br>
+            <% } if (student.family) { %>
+            <b>Family</b> <%= student.family %>
+            <% } %>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row profile-summary">
+            <p><%= student.summary %></p>
+          </div>
+          <div class="row support-wrapper">
+            <div class="col-sm-4">
+              <a href="https://tmai.org/donate/<%= uri %>" class="support-btn font-light" target="_blank">Support</a>
+            </div>
+            <div class="col-sm-8">
+              <p>$100 a month provides a pastor a scholarship to study at CAPA.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% if (student.videoURI) { %>
+    <section id="video">
+      <div class="row">
+        <div class="col-md-4 heading">
+          <h2>Watch</h2>
+          <p><%= student.name %> shares about his dependence on God's grace</p>
+          <hr>
+        </div>
+        <div class="col-md-8">
+          <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/<%= student.videoURI %>?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% } if (student.audio && student.audio.length > 0) { %>
+    <section id="audio">
+      <div class="row">
+        <div class="col-md-4 heading">
+          <h2>Listen</h2>
           <% student.audio.forEach(function(URI, i) { %>
           <div class="audio-style">
-            <p><%= student.audioTaglines[i] %></p>
-            <audio controls src="<%= URI %>" type="audio/wav"></audio>
+          <p><%= student.audioTaglines[i] %></p>
+          <audio controls src="<%= URI %>" type="audio/wav"></audio>
           </div>
           <% }); %>
+          <hr>
+        </div>
+        <div class="col-md-8">
+          <img src="/images/audio.jpg">
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-4 interview interview-title">
-        <hr>
+    </section>
+    <% } if (student.interview && student.interview.length > 0) { %>
+    <section id="interview">
+      <h2>Read</h2>
+      <div class="col-md-4 question-list">
         <h3>Interview with <%= student.name %></h3>
-        <a class="show-all">Show All Answers</a>
-        <a class="hide-all">Hide All Answers</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-4 interview">
-        <% student.interview.forEach(function(i, index) { %>
-        <div class="qa-pair">
-          <p class="question"><%= i.question %></p>
-          <p class="answer<%= (index == 0) ? " first-answer" : "" %>"><%- i.answer %></p>
-        </div>
+        <div class="row y-selectors">
+        <% student.interview.sort(function(a,b) {return a.year - b.year;}).forEach(function(interviewGroup) { %>
+        <span class="y-selector <%= interviewGroup.year %>"><%= interviewGroup.year %></span>
         <% }); %>
+        </div>
+        <% student.interview.forEach(function(interviewGroup) {
+        interviewGroup.qa.forEach(function(qa, i) { %>
+        <div class="row q-selector <%= interviewGroup.year %> <%= i+1 %>">
+          <div class="col-sm-1">
+            <p class="q-number">Q<%= i+1 %></p>
+          </div>
+          <div class="col-sm-11">
+            <p class="q-question"><%= qa.question %></p>
+          </div>
+        </div>
+        <% })}) %>
       </div>
-    </div>
-</div>
+      <div class="col-md-8">
+        <% student.interview.forEach(function(interviewGroup) {
+        interviewGroup.qa.forEach(function(qa, i) { %>
+        <div class="row qa <%= interviewGroup.year %> <%= i+1 %>">
+          <div class="col-sm-1">
+            <h2 class="q-number">Q<%= i+1 %></h2>
+          </div>
+          <div class="col-sm-11">
+            <h2><%= qa.question %></h2>
+            <p class="answer"><%- qa.answer %></p>
+          </div>
+        </div>
+        <% })}) %>
+      </div>
+    </section>
+    <% } %>
+  </div>
+
   <%- include footer.ejs %>
+
   <script>
-      $(document).ready(function(){
-        $(".first-answer").show();
-        $(".question").on('click', function() {
-          $(this).parent().children('.answer').slideToggle();
-          if ($(".answer:hidden").length != 0) {
-            $(".hide-all").hide();
-            $(".show-all").show();
-          }
-          if ($(".answer:hidden").length == 0) {
-            $(".show-all").hide();
-            $(".hide-all").show();
-          }
-        });
-        $(".show-all").on('click', function() {
-          $(".show-all").hide();
-          $(".hide-all").show();
-          $(".answer").fadeIn(200);
-        });
-        $(".hide-all").on('click', function() {
-          $(".hide-all").hide();
-          $(".show-all").show();
-          $(".answer").fadeOut(200);
-        });
+    $(document).ready(function(){
+      $('.q-selector').hide();
+      $('.qa').hide();
+      var latestYear = <%= student.interview[student.interview.length - 1].year %>;
+      $('.q-selector.' + latestYear).show();
+      $('.q-selector.' + latestYear + '.1').addClass('q-selected');
+      $('.y-selector.' + latestYear).addClass('y-selected');
+      $('.' + latestYear + '.1').show();
+
+      $('.q-selector').on('click', function() {
+        $('.qa').hide();
+        $('.q-selector').removeClass('q-selected');
+        $('.' + $(this).attr('class').split(' ').slice(2).join('.')).show(); // .year.qnumber
+        $(this).addClass('q-selected');
       });
+
+      $('.y-selector').on('click', function() {
+        $('.q-selector').hide();
+        $('.qa').hide();
+        $('.y-selector').removeClass('y-selected');
+        var year = $(this).attr('class').split(' ').slice(1).join('');
+        $(this).addClass('y-selected');
+        $('.q-selector.' + year).show();
+        $('.q-selector').removeClass('q-selected');
+        $('.q-selector.' + year + '.1').addClass('q-selected');
+        $('.' + year + '.1').show();
+      });
+
+
+//      $(".first-answer").show();
+//      $(".question").on('click', function() {
+//      $(this).parent().children('.answer').slideToggle();
+//      if ($(".answer:hidden").length != 0) {
+//      $(".hide-all").hide();
+//      $(".show-all").show();
+//      }
+//      if ($(".answer:hidden").length == 0) {
+//      $(".show-all").hide();
+//      $(".hide-all").show();
+//      }
+//      });
+//      $(".show-all").on('click', function() {
+//      $(".show-all").hide();
+//      $(".hide-all").show();
+//      $(".answer").fadeIn(200);
+//      });
+//      $(".hide-all").on('click', function() {
+//      $(".hide-all").hide();
+//      $(".show-all").show();
+//      $(".answer").fadeOut(200);
+//    });
+    });
   </script>
 </body>
 </html>

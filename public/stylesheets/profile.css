@@ -1,250 +1,157 @@
-.name {
-    margin-bottom: 2rem;
+.profile-stats p,
+#interview {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
 }
 
-.profile-left {
-    margin-bottom: 50px;
+#interview .answer {
+    font-family: 'Crimson Text', serif;
+    color: #5B5E53;
+    font-weight: 400;
 }
 
-.detail-list {
-    right: 42%;
-    font-size: 1.3rem;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.quote h2{
-    text-align: left;
-}
-
-.qa-pair p:hover {
-    cursor: pointer;
-}
-
-.program {
-    margin-top: 1.7em;
-}
-
-.interview p {
-    text-align: left;
-}
-
-.program p {
-    font-size: 0.75em;
-}
-
-.audio {
-    margin-top: 2em;
-}
-
-p {
-    color: #7a6f67;
-}
-
-h1 {
-    color: #AD7118;
-    text-transform: uppercase;
+#interview strong {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
 }
 
 h2 {
-    color: #7a6f67;
-    font-size: 2em;
-    text-align: center;
-    margin-top: 0;
+    font-weight: 700;
 }
 
-h3 {
-    text-transform: uppercase;
-}
-
-.description {
-    margin-top: 1em;
-}
-
-.col-md-4 {
-    text-align: center;
-}
-
-.support-wrapper {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.support {
-    padding: 1rem 3rem;
-    margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 1000px) {
-
-    .mobile-ver{
-        display: inline;
-        visibility: hidden;
-    }
-    .detail-list{
-        right: 27%;
-        font-size: 0.8rem;
-    }
-    .desktop-ver{
-        display: inline;
-        visibility: visible;
-    }
-    .map{
-        right: 5%;
-    }
-    .support{
-        padding: .5rem 2rem;
-    }
-}
-
-/*end of copied script may overlap with home*/
-
-
-hr{
-    border-style: solid;
-    border-color: #e1b67c;
-    border-width: 4px 0 0 0;
-    margin: 0;
-}
-
-.audio-style {
-    margin: 1.2rem 0;
-}
-
-/*.btn {*/
-    /*margin-top: 5rem;*/
-/*}*/
-
-.block-name {
-    background-color: rgba(56, 56, 56, 0.83);
-    padding: 2rem;
-}
-
-.container-style {
+.container {
     display: block;
     padding-top: 5rem;
 }
 
-.detail-list {
-    color: #47413C;
-    display: inline;
-    z-index: 2;
-    list-style: none;
-    text-transform: uppercase;
-
-    font-weight: 500;
-    margin-top: 3rem;
+section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-.detail-list li {
-    margin-bottom: 2rem;
+h1, h2, h3, strong, b {
+    color: rgb(22, 22, 22);
 }
 
-.header_name {
-    display: block;
-    margin-bottom: 4rem;
-    background-color: rgba(219, 143, 0, 0.52);
-    text-transform: uppercase;
-    color: white;
-    display: none;
+.photo-quote {
+    background-color: #20263D;
+    /* todo: add media query to only use flexbox centering when width >= 768px */
+    display: flex;
+    align-items: center;
 }
 
-.interview-title {
-    margin-bottom: 2rem;
+.profile-pic {
+    padding: 0;
 }
 
-.interview h3 {
-    text-align: center;
+.quote {
+    padding: 1rem 4rem;
 }
 
-.list {
-    margin-top: 5rem;
-    display: inline;
-    height: 20rem;
-}
-
-.middle {
-    text-align: center;
-}
-
-.mobile-ver {
-    margin: 2rem 0 2rem 0;
-}
-
-.profilePic {
-    margin: auto;
-    position: relative;
-    height: 15rem;
-    width: 15rem;
-    border-radius: 50%;
-    border: #AD7118 6px solid;
-    display: block;
-}
-
-.interview>h3 {
-    color: #47413C;
-    text-transform: uppercase;
-    text-align: left;
-}
-
-.btn.btn-default,
-.btn.btn-default:hover,
-.btn.btn-default:active,
-.btn.btn-default:focus {
-    margin-bottom: 20px;
-}
-
-.hide-all {
-    display: none;
-}
-
-.question:hover {
-    text-decoration: underline;
-}
-
-.question {
-    color: #186EAD;
-    font-weight: 500;
-}
-
-.answer {
-    font-weight: normal;
-    display: none;
-    margin-bottom: 2rem;
-}
-
-.support {
-    font-size: 1.4rem;
-    background-color: #AD7118;
-    color: #fff;
-    text-align: center;
-}
-
-.support:hover,
-.support:focus {
-    text-decoration: none;
+.quote h2 {
     color: #fff;
 }
 
-#details {
-    display: block;
-    text-align: center;
+.profile-info {
+    background-color: rgb(251, 251, 251);
 }
 
-#more-info {
-    margin: 1rem 0 2rem 0;
-    display: block;
+.profile-name {
+    margin: 2rem 1rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    word-wrap: break-word;
+}
+
+.profile-stats {
+    color: rgb(155, 155, 155);
+    font-size: 0.9rem;
+}
+
+.profile-stats b {
+    color: rgb(33, 36, 62);
+}
+
+.profile-summary {
+    padding: 2rem 5rem;
+}
+
+.support-wrapper {
+    padding: 1rem 5rem;
+}
+
+.support-wrapper p {
     font-size: 0.8rem;
 }
 
-.pipe {
-    color: #e1b67c;
+.support-btn {
+    border: 3px solid rgb(74, 168, 230);
+    border-radius: 5px;
+    padding: 0 2rem;
+    color: rgb(33, 36, 62);
 }
 
-a.show-all,
-a.hide-all {
-    color: gray;
+.support-btn:hover,
+.support-btn:focus {
+    text-decoration: none;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section .heading {
+    padding-right: 6rem;
+}
+
+section hr {
+    height: 5px;
+    background-color: rgb(22, 22, 22);
+}
+
+#interview .question-list {
+    padding: 0;
+}
+
+.y-selectors {
+    padding: 0 1rem 1rem 1rem;
+}
+
+/*rgb(74, 168, 230)*/
+
+.y-selector {
+    padding: 0 1rem;
+    margin: 1rem;
+    color: rgb(155, 155, 155);
+    border-bottom: 3px solid rgb(155, 155, 155);
     cursor: pointer;
+}
+
+.q-selector {
+    font-size: 0.9rem;
+    color: rgb(155, 155, 155);
+    cursor: pointer;
+}
+
+.y-selected {
+    color: rgb(22, 22, 22);
+    border-bottom: 3px solid rgb(74, 168, 230);
+}
+
+.qa .q-number,
+.q-selected .q-number {
+    color: rgb(74, 168, 230);
+}
+
+.q-selected .q-question {
+    color: rgb(22, 22, 22);
 }

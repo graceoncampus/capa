@@ -10,11 +10,15 @@ var studentSchema = mongoose.Schema({
     quote: String,
     summary: String,
     photoURI: String,
+    videoURI: String,
     audio: [String],
     audioTaglines: [String],
     interview: [{
-        question: String,
-        answer: String
+        year: Number,
+        qa: [{
+            question: String,
+            answer: String
+        }]
     }]
 });
 
