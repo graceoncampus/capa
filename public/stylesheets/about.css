@@ -15,6 +15,10 @@
     width: 12rem;
 }
 
+section.videos {
+    margin: 0 2rem;
+}
+
 section.mission {
     margin-top: 3rem;
     margin-bottom: 5rem;
