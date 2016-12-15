@@ -76,8 +76,8 @@ body {
     margin-bottom: 0.5rem;
 }
 
-button.btn-default.show-all-btn,
-button.btn-default.show-all-btn:hover {
+button.btn-default.mdiv-btn,
+button.btn-default.mdiv-btn:hover {
     background-color: #62abe1;
     color: #fff;
     border-color: #62abe1;
