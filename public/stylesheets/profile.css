@@ -152,6 +152,10 @@ section hr {
     color: rgb(74, 168, 230);
 }
 
+.q-question {
+    margin-left: 1rem;
+}
+
 .q-selected .q-question {
     color: rgb(22, 22, 22);
 }

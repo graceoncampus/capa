@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="row profile-info">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <h1 class="profile-name"><%= student.name %></h1>
           <div class="profile-stats">
             <p>
@@ -39,10 +39,11 @@
             </p>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
           <div class="row profile-summary">
             <p><%= student.summary %></p>
           </div>
+          <% if (student.status == "Current") { %>
           <div class="row support-wrapper">
             <div class="col-sm-4">
               <a href="https://tmai.org/donate/<%= uri %>" class="support-btn font-light" target="_blank">Support</a>
@@ -51,6 +52,7 @@
               <p>$100 a month provides a pastor a scholarship to study at CAPA.</p>
             </div>
           </div>
+          <% } %>
         </div>
       </div>
     </section>
