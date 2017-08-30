@@ -159,3 +159,59 @@ section hr {
 .q-selected .q-question {
     color: rgb(22, 22, 22);
 }
+
+.multi-state {
+    margin: 0 40px 20px 0;
+    height: 40px;
+    font-size: 18px;
+    float:right;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    padding: 5px 20px;
+    -webkit-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+  }
+  
+  .multi-state i {
+    margin-right: 4px;
+  }
+  
+  .saving,
+  .saved {
+    background: #fff;
+    border: solid 1px #62abe1;
+    color: #62abe1;
+  }
+  .save-enabled {
+    background: #62abe1;
+    border: solid 1px #62abe1;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  .save-enabled:hover {
+    background: #77baec;
+    border: solid 1px #77baec;
+    box-shadow: none;
+    bottom: 0;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  .clear {
+      background: transparent;
+      box-shadow: none;
+  }
+  button {
+      outline: 0!important
+  }

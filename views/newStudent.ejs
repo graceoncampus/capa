@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include head.ejs %>
+  <script src="https://use.fontawesome.com/780c86b125.js"></script>
+    <link rel="stylesheet" href="/stylesheets/newStudent.css">
+</head>
+<body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-70988910-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <nav class="navbar navbar-fixed-top navbar-collapse">
+      <!--<div class="navbar">-->
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">
+                  <img class="capawhite" alt="GOC" src="/images/capa_logo_white.png">
+              </a>
+          </div>
+          <div class="collapse navbar-collapse" id="collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/students">Students</a></li>
+                <li><a href="https://tmai.org/donate/?recurring=1&months=1&recipient=CAPA" target="_blank">Donate</a></li>
+                <li><a href="/readpapers">Read Papers</a></li>
+                <li><a href="/newsletters">Newsletters</a></li>
+                <li><a href="/new">|</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </div>
+      </div>
+  </nav>
+
+  <div class="container navbar-spacer">
+    <h1>Create Student</h1>
+  </div>
+    <section>
+      <div class="container">
+          <form class="uploadImage" enctype="multipart/form-data" action="/new" method="POST">
+            <div class="row">
+                <div class='col-lg-9'>
+                    <div class="row">
+                        <div class='col-lg-6'>
+                            <div class="input input-group">
+                                <label>
+                                    Full Name    
+                                    <input type="text" class="form-control" id="name" placeholder='Full Name' />
+                                </label>
+                            </div>
+                        </div>
+                        <div class='col-lg-6'>
+                            <div class="input input-group">
+                                <label>
+                                    Age   
+                                    <input type="number" class="form-control" id="age" placeholder='33'>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='col-lg-6'>
+                            <div class="input input-group">
+                                <label>
+                                    Location   
+                                    <input type="text" class="form-control" id="location" placeholder='Lilongwe'>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='col-lg-6'>
+                            <div class="input input-group">
+                                <label>
+                                   Program<br/>
+                                    <select id="program">
+                                        <option disabled>
+                                            Select a program
+                                        </option>
+                                        <option value="Master of Divinity ('20)">
+                                            Master of Divinity Year 1
+                                        </option>
+                                        <option value="Advanced Diploma ('18)">
+                                            Advanced Diploma
+                                        </option>
+                                        <option value="Bachelor of Theology ('19)">
+                                            Bachelor of Theology Year 1
+                                        </option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class='col-lg-6'>
+                                <div class="input input-group">
+                                    <label>
+                                            Status<br/>
+                                        <select id="status">
+                                            <option disabled value='' selected>
+                                                Select status
+                                            </option>
+                                            <option value="Current">
+                                                Current
+                                            </option>
+                                            <option value="Graduate">
+                                                Graduate
+                                            </option>
+                                        </select>
+                                    </label>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-lg-3'>
+                    <label>
+                        Profile Picture 
+                        <img class="profile" style="margin: 5px 0 10px 0" src='/images/students/800x800.png'>
+                            <label class="btn btn-primary">
+                                Browse&hellip; <input type="file" name="imagename" id="imagename" style="display: none;">
+                            </label>
+                    </label>
+                </div>
+            </div>
+            <div class="input input-group">
+                <label>
+                    Family Description   
+                    <input type="text" class="form-control" id="family" placeholder='Wife and two children'>
+                </label>
+            </div>
+            <div class="input input-group">
+                <label>
+                    Quote   
+                    <textarea rows="6" class="form-control" id="quote" placeholder='Quote goes here'></textarea>
+                </label>
+            </div>
+            <div class="input input-group">
+                <label>
+                    Summary  
+                    <textarea rows="9" class="form-control" id="summary" placeholder='Intro goes here'></textarea>
+                </label>
+            </div>
+            <label>
+                Interview
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class='noEdit'>1</td><td> </td><td> </td></tr>
+                    </tbody>
+                </table>
+            </label>
+            <a style="cursor:hover" class="add-row">+ Add Question</a></br>
+            <p>
+                <button type="submit" class="multi-state save-disabled" disabled>Save</button>
+            </p>
+          </form>
+        
+    </section>
+    <%- include footer.ejs %>
+    <script src="/scripts/editableTable.min.js"></script>
+    <script src="/scripts/jquery.form.min.js"></script>
+    <script>
+        var image = '800x800.png'
+        $('.uploadImage').submit(function(e){
+            e.preventDefault();
+            toSaving();
+            var data = {};
+            data.name = $('#name').val();
+            data.program = $('#program').val();
+            data.age = $('#age').val();
+            data.location = $('#location').val();
+            data.family = $('#family').val();
+            data.quote = $('#quote').val();
+            data.summary = $('#summary').val();
+            data.status = $('#status').val();
+            data.draft = true;
+            data.photoURI = image;
+            data.videoURI = '';
+            data.interview = [];
+            data.audioTaglines  = [];
+            data.audio = [];
+            var interviewFinal= []
+            var interview = { year: 2017, qa: [] }
+            $(".table tbody").find('tr').each(function (i, el) {
+                var $tds = $(this).find('td'),
+                question = $tds.eq(1).text(),
+                answer = $tds.eq(2).text();
+                if (question && question!==' ' && answer && answer!==' ')
+                    interview.qa.push({ question, answer });
+            });
+            if (interview.qa.length > 0) interviewFinal.push(interview);
+            if (interviewFinal.length > 0 ) data.interview = interviewFinal
+            
+            $(this).ajaxSubmit({
+                data,
+                contentType: 'application/json',
+                success: function(response){
+                    toSaved();    
+                    window.location.replace('/admin') 
+                }
+            });
+            return false;
+        });
+        var btn = $('.multi-state');
+        var txt = $('#name').val();
+        var toSaveEnabled = function() {
+            btn.removeClass('save-disabled').addClass('save-enabled').prop('disabled', false);
+            btn.find('i').remove();
+        };
+
+        var toSaveDisabled = function() {
+            btn.removeClass('save-enabled').addClass('save-disabled').prop('disabled', true);
+        };
+
+        var toSaved = function() {
+            btn.removeClass('saving').addClass('saved').text('Saved');
+            btn.find('i').remove();
+            btn.prepend('<i class="fa fa-check"></i>');
+        };
+
+        var toSaving = function() {
+            btn.removeClass('save-enabled').addClass('saving').text('Saving').prop('disabled', true);
+            btn.prepend('<i class="fa fa-circle-o-notch fa-spin"></i>');
+            txt = $('input[type=text]').val();
+        };
+       $("#imagename").change(function() {
+            var imageFile = $(this)[0].files[0];
+            var url = window.URL.createObjectURL(imageFile);
+            image = imageFile.name
+            $('.profile').attr("src",url);
+        })
+        $(document).on('keyup', 'input[type=text]', function() {
+            btn.removeClass('saved').text('Save');
+            if ($(this).val() !== txt) {
+                toSaveEnabled();
+            } else {
+                toSaveDisabled();
+            }
+        });
+        $(document).ready(function(){
+            $('.table').editableTableWidget({editor: $('<textarea>'), preventColumns: [ 1 ]});
+            $(".add-row").click(function(){
+                var i = 1;
+                var last = $('.table tr:last td:first')[0]
+                if (last) i = parseInt(last.innerHTML) + 1;
+                var markup = "<tr><td class='noEdit'>" + i + "</td><td> </td><td> </td></tr>";
+                $(".table tbody").append(markup);
+                $('.table').editableTableWidget({editor: $('<textarea>'), preventColumns: [ 1 ]});
+            });
+        });
+    </script>
+</body>
+</html>

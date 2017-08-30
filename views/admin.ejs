@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include head.ejs %>
+  <link rel="stylesheet" href="/stylesheets/students.css">
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top navbar-collapse">
+        <!--<div class="navbar">-->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img class="capawhite" alt="GOC" src="/images/capa_logo_white.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="collapse-1">
+              <ul class="nav navbar-nav">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/students">Students</a></li>
+                  <li><a href="https://tmai.org/donate/?recurring=1&months=1&recipient=CAPA" target="_blank">Donate</a></li>
+                  <li><a href="/readpapers">Read Papers</a></li>
+                  <li><a href="/newsletters">Newsletters</a></li>
+                  <li><a href="/new">|</a></li>
+                  <li><a href="/new">New Student</a></li>
+              </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container navbar-spacer" id="students">
+        <div class="row title">
+          <h1>Admin</h1>
+          <button class="btn btn-default mdiv-btn">Master of Divinity</button>
+          <button class="btn btn-default diploma-btn">Graduates</button>
+          <button class="btn btn-default show-all-btn">Show All</button>
+        </div>
+        <div class="row" id="student-list">
+              <div style="display: block; font-family: Montserrat;width:100%" class="input-group">
+                <input style="height: 41px;padding-left: 15px;max-width: 1000px;width: 90%;margin: 0 auto;left: 50%;transform: translateX(-50%);" type="search" class="search form-control" placeholder="Search by name...">
+              </div>
+          <ul style="list-style:none" class="list">
+            <% students.forEach(function(s, i) { %>
+              <li>
+                <% if (s.status == "Current") { %>
+                <div class="col-md-3 col-sm-6 col-xs-6 student mdiv" >
+                <% } else { %>
+                <div class="col-md-3 col-sm-6 col-xs-6 student diploma" >
+                <% } %>
+                  <% var mod_four;
+                      if (i%4==0) {
+                        mod_four = "zero";
+                      } else if (i%4==1) {
+                        mod_four = "one";
+                      } else if (i%4==2){
+                        mod_four = "two";
+                      } else {
+                        mod_four = "three";
+                      }
+                  %>
+                  <% if (s.draft) { %>
+                    <a href="/preview/<%= s.name %>"><span class="profilePic <%= mod_four %>">
+                      <img src="/images/students/<%= s.photoURI %>" class="img-responsive">
+                      <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '...”' : s.quote %></p>
+                    </a>
+                  <% } else { %>
+                    <a href="/students/<%= s.name %>"><span class="profilePic <%= mod_four %>">
+                      <img src="/images/students/<%= s.photoURI %>" class="img-responsive">
+                      <p class="student-quote"><%= s.quote.split(" ").length > 20 ? s.quote.split(" ", 20).join(" ") + '...”' : s.quote %></p>
+                    </a>
+                  <% } %>
+                  <p class="student-name"><a href="/preview/<%= s.name %>"><%= s.name %></a></p>
+                  <p class="student-program"><%= s.program %></p>
+                  <a href="/update?q=<%= s.name %>" style="float:left; cursor:pointer">Edit</a>
+                  <% if (s.draft) { %>
+                    <span style="float:right" class="label label-danger">DRAFT</span>
+                  <% } %>
+                  <% if (!s.draft) { %>
+                    <span style="float:right" class="label label-success">PUBLISHED</span>
+                  <% } %>
+                </div>
+              </li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <%- include footer.ejs %>
+  <script src="/scripts/list.min.js"></script>  
+  <script type='text/javascript'>
+  
+      $(document).ready(function() {
+        var options = {
+          valueNames: [ 'student-name' ]
+        };
+        var studentList = new List('student-list', options);
+        $('.student-quote').hide();
+        $('.student').hide();
+        $('.mdiv').show();
+
+        $('.diploma-btn').on('click', function() {
+          $('.btn').css("background-color", "transparent");
+          $('.btn').css("color", "#176ead");
+          $('.btn').css("border-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
+          $(this).css("color", "#fff");
+          $(this).css("border-color", "#62abe1");
+          $('.student').hide();
+          $('.diploma').fadeIn(600);
+        });
+        $('.mdiv-btn').on('click', function() {
+          $('.btn').css("background-color", "transparent");
+          $('.btn').css("color", "#176ead");
+          $('.btn').css("border-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
+          $(this).css("color", "#fff");
+          $(this).css("border-color", "#62abe1");
+          $('.student').hide();
+          $('.mdiv').fadeIn(600);
+        });
+        $('.show-all-btn').on('click', function() {
+          $('.btn').css("background-color", "transparent");
+          $('.btn').css("color", "#176ead");
+          $('.btn').css("border-color", "#176ead");
+          $(this).css("background-color", "#62abe1");
+          $(this).css("color", "#fff");
+          $(this).css("border-color", "#62abe1");
+          $('.student').hide();
+          $('.student').fadeIn(600);
+        });
+        if ($(window).width() >= 768) {
+          $('.profilePic').hover(
+            function() {
+              $(this).find('.img-responsive').css('opacity', '0.4');
+              $( this ).children('.student-quote').show();
+            }, function() {
+              $(this).find('.img-responsive').css('opacity', '1');
+              $( this ).children('.student-quote').hide();
+            }
+          );
+        }
+      });
+  </script>
+</body>
+</html>

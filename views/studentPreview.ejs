@@ -2,11 +2,12 @@
 <html>
 <head>
   <%- include head.ejs %>
+  <script src="https://use.fontawesome.com/780c86b125.js"></script>  
   <link rel="stylesheet" href="/stylesheets/profile.css">
 </head>
 <body>
   <%- include navbar.ejs %>
-  <div class="container">
+  <div style="margin-bottom: 100px" class="container">
     <section id="main">
       <div class="row photo-quote">
         <div class="col-sm-3 profile-pic">
@@ -132,9 +133,11 @@
     </section>
     <% } %>
   </div>
-
-  <%- include footer.ejs %>
-
+  <!-- <nav class="clear navbar navbar-default navbar-fixed-bottom">                     
+      <button id="publish" class="multi-state save-enabled">Publish</button> 
+  </nav> -->
+  <script src="/scripts/jquery.min.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>  
   <script>
     $(document).ready(function(){
       $('.y-selector:first').click();

@@ -1,0 +1,57 @@
+<html>
+<head>
+  <%- include head.ejs %>
+  <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-70988910-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <nav class="navbar navbar-fixed-top navbar-collapse">
+      <!--<div class="navbar">-->
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">
+                  <img class="capawhite" alt="GOC" src="/images/capa_logo_white.png">
+              </a>
+          </div>
+      </div>
+  </nav>
+
+  <div class="container navbar-spacer">
+    <div class="title">
+      <h1>Login</h1>
+    </div>
+  </div>
+    <section>
+      <div class="container center">
+        <div class="col-lg-4 col-lg-offset-4">
+          <form action="/login" method="post">
+            <h1><div class="input input-group input-group-lg">
+              <input type="text" class="form-control" name="username" placeholder="username">
+            </div></h1>
+            <h1><div class="input input-group input-group-lg">
+              <input type="password" class="form-control" name="password" placeholder="password">
+            </div></h1>
+            <button type="submit" class="login btn btn-default">Log In</button>
+          </form>
+          
+        </div>
+      </div>
+    </section>
+  <%- include footer.ejs %>
+</body>
+</html>

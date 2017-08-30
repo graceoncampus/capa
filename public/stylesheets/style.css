@@ -6,7 +6,7 @@ body {
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, a, button, b, .question, .learn-more p, .profile-stats p, footer p {
+h1, h2, h3, h4, h5, h6, a, button, b, .question, .learn-more p, .profile-stats p, footer p, .label {
   font-family: Montserrat, sans-serif;
   font-weight: 400;
 }

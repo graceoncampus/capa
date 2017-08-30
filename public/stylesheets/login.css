@@ -1,0 +1,9 @@
+.input {
+    width: 100%;
+}
+.btn.login, .btn.login:hover, .btn.login:active, .btn.login:focus {
+    outline: 0!important;
+    margin: 10px 0 0;
+    height: 46px;
+    width: 100%;
+}
