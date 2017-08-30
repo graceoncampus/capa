@@ -7,6 +7,7 @@ var mongoose = require('mongoose')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 var multer = require('multer')
+var compression = require('compression')
 
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
@@ -23,7 +24,7 @@ var routes = require('./routes/routes')
 var Student = require('./models/student')
 
 var app = express()
-
+app.use(compression())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
