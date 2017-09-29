@@ -110,7 +110,7 @@
                   <p class="q-number">Q<%= i+1 %></p>
                 </div>
                 <div class="col-sm-11">
-                  <p class="q-question"><%= qa.question %></p>
+                  <p class="q-question"><%- qa.question %></p>
                 </div>
               </div>
             <% }) %>
@@ -124,7 +124,7 @@
             <h2 class="q-number">Q<%= i+1 %></h2>
           </div>
           <div class="col-sm-11">
-            <h2><%= qa.question %></h2>
+            <h2><%- qa.question %></h2>
             <p class="answer"><%- qa.answer %></p>
           </div>
         </div>

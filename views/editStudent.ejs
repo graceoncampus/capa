@@ -320,14 +320,13 @@
             data.quote = $('#quote').val();
             data.summary = $('#summary').val();
             data.status = $('#status').val();
-            console.log(draft)
             data.draft = draft;
             var interviewFinal= []
             var interview = { year: 2017, qa: [] }
             $("#editable tbody").find('tr').each(function (i, el) {
                 var $tds = $(this).find('td'),
-                question = $tds.eq(1).text(),
-                answer = $tds.eq(2).text();
+                question = $tds.eq(0).text(),
+                answer = $tds.eq(1).text();
                 if (question && question!==' ' && answer && answer!==' ')
                     interview.qa.push({ question, answer });
             });
