@@ -179,11 +179,13 @@
                 </div>
                 <label>
                     Interview<br/>
-                    <% if ((student.interview.reverse())[0].year!==2017) { %>
+                    <% var interview = student.interview.slice().sort(function(a,b) {return (a.year < b.year)} ); %>
+                    
+                    <% if (interview[0].year!==2017) { %>
                         <input class="inputs" id="taba" type="radio" name="tabs" checked/>
-                        <label class="label" id="labela" for="taba">2017</label>
+                        <label class="label" id="labela" for="taba"><%- interview[0].year %></label>
                     <% } %>
-                    <% student.interview.reverse().forEach(function(interviewGroup, i) { %>
+                    <% interview.forEach(function(interviewGroup, i) { %>
                         <% if (interviewGroup.year===2017) { %>
                             <input class="inputs" id="taba" type="radio" name="tabs" />
                             <label class="label" id="labela" for="taba"><%- interviewGroup.year %></label>
@@ -192,7 +194,7 @@
                             <label class="label" id="label<%- i %>" for="tab<%- i %>"><%- interviewGroup.year %></label>
                         <% } %>
                     <% }) %>
-                    <% student.interview.reverse().forEach(function(interviewGroup, i) { %>
+                    <% interview.forEach(function(interviewGroup, i) { %>
                         <% if(interviewGroup.qa.length===0) { %>
                             <p style="text-align:center">Nothing to see here 😮</p>
                         <% } else { %>
@@ -278,17 +280,19 @@
             btn.prepend('<i class="fa fa-circle-o-notch fa-spin"></i>');
         };
         var draft = false;
+        <% var scriptInt = student.interview.slice().sort(function(a,b) {return (a.year < b.year)} ); %>
+        
         $('#labela').click(function() {
-            <% student.interview.reverse().forEach(function(interviewGroup, j) { %>
+            <% scriptInt.forEach(function(interviewGroup, j) { %>
                 $('#content<%- j %>').css("display", "none");
             <% }) %>
             $('#contenta').css("display", "block");
         })
 
-        <% student.interview.reverse().forEach(function(interviewGroup, i) { %>
+        <% scriptInt.forEach(function(interviewGroup, i) { %>
             <% if(interviewGroup.qa.length!==0) { %>
                 $('#label<%- i %>').click(function() {
-                    <% student.interview.reverse().forEach(function(interviewGroup, j) { %>
+                    <% scriptInt.forEach(function(interviewGroup, j) { %>
                         <%  if(interviewGroup.qa.length!==0) { %>
                             $('#content<%- j %>').css("display", "none");
                             $('#contenta').css("display", "none");
@@ -323,10 +327,21 @@
             data.draft = draft;
             var interviewFinal= []
             var interview = { year: 2017, qa: [] }
+            <% scriptInt.forEach(function(interviewGroup, i) { %>
+                var interviewGroup =  <%- JSON.stringify(interviewGroup) %>
+                if (interviewGroup.year!==2017)
+                    interviewFinal.push(interviewGroup)
+            <% }) %>
             $("#editable tbody").find('tr').each(function (i, el) {
-                var $tds = $(this).find('td'),
-                question = $tds.eq(0).text(),
-                answer = $tds.eq(1).text();
+                var $tds = $(this).find('td');
+                var question, answer;
+                if (!(/^\d+$/.test($tds.eq(0).text()))) {
+                    question = $tds.eq(0).text();
+                    answer = $tds.eq(1).text();
+                } else {
+                    question = $tds.eq(1).text();
+                    answer = $tds.eq(2).text();
+                }
                 if (question && question!==' ' && answer && answer!==' ')
                     interview.qa.push({ question, answer });
             });

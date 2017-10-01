@@ -198,9 +198,15 @@
             var interviewFinal= []
             var interview = { year: 2017, qa: [] }
             $(".table tbody").find('tr').each(function (i, el) {
-                var $tds = $(this).find('td'),
-                question = $tds.eq(1).text(),
-                answer = $tds.eq(2).text();
+                var $tds = $(this).find('td');
+                var question, answer;
+                if (!(/^\d+$/.test($tds.eq(0).text()))) {
+                    question = $tds.eq(0).text();
+                    answer = $tds.eq(1).text();
+                } else {
+                    question = $tds.eq(1).text();
+                    answer = $tds.eq(2).text();
+                }
                 if (question && question!==' ' && answer && answer!==' ')
                     interview.qa.push({ question, answer });
             });
