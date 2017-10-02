@@ -56,6 +56,7 @@
         </div>
       </div>
     </section>
+    <% var interview = student.interview.slice().sort(function(a,b) {return (a.year < b.year)} ); %>    
     <% if (student.videoURI) { %>
     <section id="video">
       <div class="row">
@@ -89,19 +90,20 @@
         </div>
       </div>
     </section>
-    <% } if (student.interview && student.interview.length > 0) { %>
+    
+    <% } if (interview && interview.length > 0) { %>
     <section id="interview">
       <h2>Read</h2>
       <div class="col-md-4 question-list">
         <h3>Interview with <%= student.name %></h3>
         <div class="row y-selectors">
-        <% student.interview.sort(function(a,b) {return a.year - b.year;}).forEach(function(interviewGroup) { %>
+        <% interview.forEach(function(interviewGroup) { %>
           <% if(interviewGroup.qa.length!==0) { %>
             <span class="y-selector <%= interviewGroup.year %>"><%= interviewGroup.year %></span>
           <% } %>
         <% }); %>
         </div>
-        <% student.interview.forEach(function(interviewGroup) { %>
+        <% interview.forEach(function(interviewGroup) { %>
           <% if(interviewGroup.qa.length!==0) { %>
             <% interviewGroup.qa.forEach(function(qa, i) { %>
               <div class="row q-selector <%= interviewGroup.year %> <%= i+1 %>">
@@ -116,7 +118,7 @@
           <% } }) %>
       </div>
       <div class="col-md-8">
-        <% student.interview.forEach(function(interviewGroup) {
+        <% interview.forEach(function(interviewGroup) {
         interviewGroup.qa.forEach(function(qa, i) { %>
         <div class="row qa <%= interviewGroup.year %> <%= i+1 %>">
           <div class="col-sm-1">

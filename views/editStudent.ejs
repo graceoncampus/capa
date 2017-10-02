@@ -65,7 +65,11 @@
                                 <div class="input input-group">
                                     <label>
                                         Age   
-                                        <input type="number" class="form-control" id="age" value='<%- student.age %>'>
+                                        <% if (student.age) { %>
+                                            <input type="number" class="form-control" id="age" value='<%- student.age %>'>                                            
+                                        <% } else { %>
+                                            <input type="number" class="form-control" id="age">                                            
+                                        <% } %>
                                     </label>
                                 </div>
                             </div>
@@ -318,7 +322,7 @@
             var data = {};
             data.name = $('#name').val();
             data.program = $("#program").val();
-            data.age = $('#age').val();
+            if ($('#age').val()) data.age = $('#age').val();
             data.location = $('#location').val();
             data.family = $('#family').val();
             data.quote = $('#quote').val();
