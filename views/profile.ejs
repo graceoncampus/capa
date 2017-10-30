@@ -139,9 +139,14 @@
 
   <script>
     $(document).ready(function(){
-      $('.y-selector:first').click();
-      $('.y-selector:first').addClass('y-selected');
-      
+      $('.q-selector').hide();
+      $('.qa').hide();
+      var latestYear = <%= student.interview[student.interview.length - 1].year %>;
+      $('.q-selector.' + latestYear).show();
+      $('.q-selector.' + latestYear + '.1').addClass('q-selected');
+      $('.y-selector.' + latestYear).addClass('y-selected');
+      $('.' + latestYear + '.1').show();
+
       $('.q-selector').on('click', function() {
         $('.qa').hide();
         $('.q-selector').removeClass('q-selected');
