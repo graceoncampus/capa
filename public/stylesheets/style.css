@@ -6,7 +6,7 @@ body {
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, a, button, b, .question, .learn-more p, .profile-stats p, footer p, .label {
+h1, h2, h3, h4, h5, h6, a, button, .question, .learn-more p, .profile-stats p, footer p, .label {
   font-family: Montserrat, sans-serif;
   font-weight: 400;
 }
@@ -111,7 +111,28 @@ footer h3 {
   width: 200px;
   text-transform: uppercase;
 }
-
+.btn-default > button {
+  background-color: transparent;
+  color: #176ead;
+  border-radius: 0px;
+  padding: 0;
+  width: 100%;
+  text-transform: uppercase;
+}
+btn-default.open {
+  background: transparent!important;
+  border: none!important;
+  color: #176ead!important;
+}
+.no-button {
+  -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
+   border: none;
+}
+.dropdown-toggle {
+  box-shadow: none!important;
+}
 .title h1 {
   font-size: 4rem;
   margin: 3rem 0 2rem 0;

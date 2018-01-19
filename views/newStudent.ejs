@@ -152,20 +152,19 @@
             </div>
             <label>
                 Interview
-                <table class="table">
-                    <thead>
-                        <tr>
+                  <div id="table-a" class="table-editable">
+                    <i class="table-add-a fa fa-plus" aria-hidden="true"></i>
+                    <table class="table-a">
+                      <thead>
                         <th>#</th>
                         <th>Question</th>
                         <th>Answer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class='noEdit'>1</td><td> </td><td> </td></tr>
-                    </tbody>
-                </table>
+                        <th></th>
+                        <th></th>
+                      </thead>
+                    </table>
+                  </div>
             </label>
-            <a style="cursor:hover" class="add-row">+ Add Question</a></br>
             <p>
                 <button type="submit" class="multi-state save-disabled" disabled>Save</button>
             </p>
@@ -178,6 +177,7 @@
     <script>
         var image = '800x800.png'
         $('.uploadImage').submit(function(e){
+
             e.preventDefault();
             toSaving();
             var data = {};
@@ -196,23 +196,34 @@
             data.audioTaglines  = [];
             data.audio = [];
             var interviewFinal= []
-            var interview = { year: 2017, qa: [] }
-            $(".table tbody").find('tr').each(function (i, el) {
-                var $tds = $(this).find('td');
-                var question, answer;
-                if (!(/^\d+$/.test($tds.eq(0).text()))) {
-                    question = $tds.eq(0).text();
-                    answer = $tds.eq(1).text();
-                } else {
-                    question = $tds.eq(1).text();
-                    answer = $tds.eq(2).text();
-                }
-                if (question && question!==' ' && answer && answer!==' ')
-                    interview.qa.push({ question, answer });
+            var $TABLEA = $("#table-a");
+            var $rowsA = $TABLEA.find("tr:not(:hidden)");
+            var headersA = [];
+            var dataA = [];
+            jQuery.fn.pop = [].pop;
+            jQuery.fn.shift = [].shift;
+            $($rowsA.shift())
+            .find("th:not(:empty)")
+            .each(function() {
+                headersA.push(
+                    $(this)
+                    .text()
+                    .toLowerCase()
+                );
             });
-            if (interview.qa.length > 0) interviewFinal.push(interview);
-            if (interviewFinal.length > 0 ) data.interview = interviewFinal
+            $rowsA.each(function() {
+                var $tdA = $(this).find("td");
+                var hA = {};
             
+                headersA.forEach(function(header, i) {
+                    if (i!==0) hA[header] = $tdA.eq(i).text();
+                });
+                
+            });
+            if (dataA.length) interviewFinal.push({ year: 2017, qa: dataA})
+
+            data.interview = interviewFinal
+            if (image) data.photoURI = image;
             $(this).ajaxSubmit({
                 data,
                 contentType: 'application/json',
@@ -259,16 +270,47 @@
                 toSaveDisabled();
             }
         });
-        $(document).ready(function(){
-            $('.table').editableTableWidget({editor: $('<textarea>'), preventColumns: [ 1 ]});
-            $(".add-row").click(function(){
-                var i = 1;
-                var last = $('.table tr:last td:first')[0]
-                if (last) i = parseInt(last.innerHTML) + 1;
-                var markup = "<tr><td class='noEdit'>" + i + "</td><td> </td><td> </td></tr>";
-                $(".table tbody").append(markup);
-                $('.table').editableTableWidget({editor: $('<textarea>'), preventColumns: [ 1 ]});
+
+        var $TABLEA = $("#table-a");
+        $(".table-add-a").on('click', function() {
+            var i = 1;
+            var last = $('.table-a tr:last td:first')[0]
+            if (last) i = parseInt(last.innerHTML) + 1;
+            var clone = `<tr><td contenteditable='true'>${i}</td><td contenteditable="true">Question</td><td contenteditable="true">Answer</td><td class="table-remove-a"><i class="table-remove-a fa fa-times" aria-hidden="true"></i></td><td><i class="table-up-a fa fa-arrow-up" aria-hidden="true"></i><i class="table-down-a fa fa-arrow-down" aria-hidden="true"></i></td></tr>`
+            $TABLEA.find("table").append(clone);
+            $(".table-remove-a").on('click',function() {
+                $(this)
+                  .parents("tr")
+                  .detach();
             });
+
+            $(".table-up-a").on('click', function() {
+                var $row = $(this).parents("tr");
+                if ($row.index() === 1) return; // Don't go above the header
+                $row.prev().before($row.get(0));
+            });
+
+            $(".table-down-a").on('click', function() {
+                var $row = $(this).parents("tr");
+                $row.next().after($row.get(0));
+            });
+        });
+
+        $(".table-remove-a").on('click',function() {
+            $(this)
+              .parents("tr")
+              .detach();
+        });
+
+        $(".table-up-a").on('click', function() {
+            var $row = $(this).parents("tr");
+            if ($row.index() === 1) return; // Don't go above the header
+            $row.prev().before($row.get(0));
+        });
+
+        $(".table-down-a").on('click', function() {
+            var $row = $(this).parents("tr");
+            $row.next().after($row.get(0));
         });
     </script>
 </body>

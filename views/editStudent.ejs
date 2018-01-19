@@ -13,7 +13,7 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-70988910-1', 'auto');
-    ga('send', 'pageview'); 
+    ga('send', 'pageview');
 
   </script>
   <nav class="navbar navbar-fixed-top navbar-collapse">
@@ -47,7 +47,7 @@
   <div class="container navbar-spacer">
     <h1>Update Student</h1>
   </div>
-<section>
+    <section>
         <div class="container">
             <form class="uploadImage" enctype="multipart/form-data" action="/update" method="POST">
                 <div class="row">
@@ -56,7 +56,7 @@
                             <div class='col-lg-6'>
                                 <div class="input input-group">
                                     <label>
-                                        Full Name    
+                                        Full Name
                                         <input type="text" class="form-control" id="name" value='<%- student.name %>' />
                                     </label>
                                 </div>
@@ -64,11 +64,11 @@
                             <div class='col-lg-6'>
                                 <div class="input input-group">
                                     <label>
-                                        Age   
+                                        Age
                                         <% if (student.age) { %>
-                                            <input type="number" class="form-control" id="age" value='<%- student.age %>'>                                            
+                                            <input type="number" class="form-control" id="age" value='<%- student.age %>'>
                                         <% } else { %>
-                                            <input type="number" class="form-control" id="age">                                            
+                                            <input type="number" class="form-control" id="age">
                                         <% } %>
                                     </label>
                                 </div>
@@ -78,7 +78,7 @@
                             <div class='col-lg-6'>
                                 <div class="input input-group">
                                     <label>
-                                        Location   
+                                        Location
                                         <input type="text" class="form-control" id="location" value='<%- student.location %>'>
                                     </label>
                                 </div>
@@ -120,7 +120,7 @@
                                                     Advanced Diploma
                                                 </option>
                                             <% } %>
-                                            <% if (student.program==="Bachelor of Theology ('19)") { %>                                                
+                                            <% if (student.program==="Bachelor of Theology ('19)") { %>
                                                 <option selected value="Bachelor of Theology ('19)">
                                                     Bachelor of Theology Year 1
                                                 </option>
@@ -155,7 +155,7 @@
                     </div>
                     <div class='col-lg-3'>
                         <label>
-                            Profile Picture 
+                            Profile Picture
                             <img class="profile" style="margin: 5px 0 10px 0" src='/images/students/<%- student.photoURI %>' >
                             <label class="btn btn-primary">
                             Browse&hellip; <input type="file" name="imagename" id="imagename" style="display: none;">
@@ -165,99 +165,90 @@
                 </div>
                 <div class="input input-group">
                     <label>
-                        Family Description   
+                        Family Description
                         <input type="text" class="form-control" id="family" value='<%- student.family %>'>
                     </label>
                 </div>
                 <div class="input input-group">
                     <label>
-                        Quote   
+                        Quote
                         <textarea rows="6" class="form-control" id="quote"><%- student.quote %></textarea>
                     </label>
                 </div>
                 <div class="input input-group">
                     <label>
-                        Summary  
+                        Summary
                         <textarea rows="9" class="form-control" id="summary"><%- student.summary %></textarea>
                     </label>
                 </div>
                 <label>
                     Interview<br/>
                     <% var interview = student.interview.slice().sort(function(a,b) {return (a.year < b.year)} ); %>
-                    
+
                     <% if (interview[0].year!==2017) { %>
                         <input class="inputs" id="taba" type="radio" name="tabs" checked/>
                         <label class="label" id="labela" for="taba">2017</label>
                     <% } %>
                     <% interview.forEach(function(interviewGroup, i) { %>
-                        <% if (interviewGroup.year===2017) { %>
-                            <input class="inputs" id="taba" type="radio" name="tabs" />
-                            <label class="label" id="labela" for="taba"><%- interviewGroup.year %></label>
-                        <% } else { %>
-                            <input class="inputs" id="tab<%- i %>" type="radio" name="tabs" />
-                            <label class="label" id="label<%- i %>" for="tab<%- i %>"><%- interviewGroup.year %></label>
-                        <% } %>
+                          <input class="inputs" id="tab<%- i %>" type="radio" name="tabs" />
+                          <label class="label" id="label<%- i %>" for="tab<%- i %>"><%- interviewGroup.year %></label>
                     <% }) %>
                     <% interview.forEach(function(interviewGroup, i) { %>
-                        <% if(interviewGroup.qa.length===0) { %>
-                            <p style="text-align:center">Nothing to see here 😮</p>
-                        <% } else { %>
-                            <% if (interviewGroup.year===2017) { %>
-                                <section class="section content" id="contenta">
-                                <table id="editable" class="table">
-                            <% }  else { %>
-                                <section class="section content" id="content<%- i %>">
-                                <table class="table">
-                            <% } %>
-                                    <thead>
-                                        <tr>
-                                        <th>#</th>
-                                        <th>Question</th>
-                                        <th>Answer</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+
+                          <section class="section content" id="content<%- i %>">
+                            <div id="table-<%- i %>" class="table-editable">
+                              <i class="table-add-<%- i %> fa fa-plus" aria-hidden="true"></i>
+                              <table class="table-<%- i %>">
+                                <thead>
+                                  <th>#</th>
+                                  <th>Question</th>
+                                  <th>Answer</th>
+                                  <th></th>
+                                  <th></th>
+                                </thead>
                                 <% interviewGroup.qa.forEach(function(qa, j) { %>
                                     <tr>
-                                        <th scope="row"><%= j+1 %></th>
-                                        <td><%- qa.question %></td>
-                                        <td><%- qa.answer %></td>
+                                      <td contenteditable="true"><%= j+1 %></td>
+                                      <td contenteditable="true"><%- qa.question %></td>
+                                      <td contenteditable="true"><%- qa.answer %></td>
+                                      <td>
+                                        <i class="table-remove-<%- i %> fa fa-times" aria-hidden="true"></i>
+                                      </td>
+                                      <td>
+                                        <i class="table-up-<%- i %> fa fa-arrow-up" aria-hidden="true"></i>
+                                        <i class="table-down-<%- i %> fa fa-arrow-down" aria-hidden="true"></i>
+                                      </td>
                                     </tr>
                                 <% }) %>
-                                    </tbody>
-                                </table>
-                                <% if (interviewGroup.year===2017) { %>
-                                    <a style="cursor:hover" class="add-row">+ Add Question</a></br>
-                                <% } %>
-                            </section>
-                        <% } %>
+                              </table>
+                            </div>
+                            <p id="export"></p>
+                          </section>
                     <% }) %>
                     <section class="section content" id="contenta">
-                        <table id="editable" class="table">
-                            <thead>
-                                <tr>
-                                <th>#</th>
-                                <th>Question</th>
-                                <th>Answer</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class='noEdit'>1</td><td> </td><td> </td></tr>
-                            </tbody>
+                      <div id="table-a" class="table-editable">
+                        <i class="table-add-a fa fa-plus" aria-hidden="true"></i>
+                        <table class="table-a">
+                          <thead>
+                            <th>#</th>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th></th>
+                            <th></th>
+                          </thead>
                         </table>
-                        <a style="cursor:hover" class="add-row">+ Add Question</a></br>
+                      </div>
                     </section>
                 </label>
                 <p>
-                    <button type="submit" id="publish" class="multi-state save-enabled publish">Publish</button>                     
+                    <button type="submit" id="publish" class="multi-state save-enabled publish">Publish</button>
                     <button id="save" class="multi-state save-enabled save">Save</button>
                 </p>
             </form>
         </div>
     </section>
     <%- include footer.ejs %>
-    <script src="/scripts/editableTable.min.js"></script>
-    <script src="/scripts/jquery.form.min.js"></script>    
+    <script src="/scripts/jquery.form.min.js"></script>
     <script>
         var image;
         var btn = $('#save');
@@ -285,7 +276,7 @@
         };
         var draft = false;
         <% var scriptInt = student.interview.slice().sort(function(a,b) {return (a.year < b.year)} ); %>
-        
+
         $('#labela').click(function() {
             <% scriptInt.forEach(function(interviewGroup, j) { %>
                 $('#content<%- j %>').css("display", "none");
@@ -306,7 +297,7 @@
                 });
             <% } %>
         <% }) %>
-        
+
         $('.section').click(function(e) {
             e.preventDefault();
         })
@@ -315,11 +306,14 @@
             draft = true;
             $('.uploadImage').submit();
         });
-        
+        jQuery.fn.pop = [].pop;
+          jQuery.fn.shift = [].shift;
+       <% var studentID = student._id %>
         $('.uploadImage').submit(function(e){
             e.preventDefault();
             toSaving();
             var data = {};
+            data.id = "<%- studentID %>"
             data.name = $('#name').val();
             data.program = $("#program").val();
             if ($('#age').val()) data.age = $('#age').val();
@@ -330,39 +324,70 @@
             data.status = $('#status').val();
             data.draft = draft;
             var interviewFinal= []
-            var interview = { year: 2017, qa: [] }
-            <% scriptInt.forEach(function(interviewGroup, i) { %>
-                var interviewGroup =  <%- JSON.stringify(interviewGroup) %>
-                if (interviewGroup.year!==2017)
-                    interviewFinal.push(interviewGroup)
-            <% }) %>
-            $("#editable tbody").find('tr').each(function (i, el) {
-                var $tds = $(this).find('td');
-                var question, answer;
-                if (!(/^\d+$/.test($tds.eq(0).text()))) {
-                    question = $tds.eq(0).text();
-                    answer = $tds.eq(1).text();
-                } else {
-                    question = $tds.eq(1).text();
-                    answer = $tds.eq(2).text();
-                }
-                if (question && question!==' ' && answer && answer!==' ')
-                    interview.qa.push({ question, answer });
+            $('#labela').click()
+            var $TABLEA = $("#table-a");
+            var $rowsA = $TABLEA.find("tr:not(:hidden)");
+            var headersA = [];
+            var dataA = [];
+
+            $($rowsA.shift())
+            .find("th:not(:empty)")
+            .each(function() {
+                headersA.push(
+                    $(this)
+                    .text()
+                    .toLowerCase()
+                );
             });
-            if (interview.qa.length > 0) interviewFinal.push(interview);
-            if (interviewFinal.length > 0 ) data.interview = interviewFinal
+            $rowsA.each(function() {
+                var $tdA = $(this).find("td");
+                var hA = {};
+            
+                headersA.forEach(function(header, i) {
+                    if (i!==0) hA[header] = $tdA.eq(i).text();
+                });
+                
+            });
+            if (dataA.length) interviewFinal.push({ year: parseInt($('#labela').text()), qa: dataA})
+            <% scriptInt.forEach(function(interviewGroup, j) { %>
+                $('#label<%- j %>').click()
+                var $TABLE<%- j %> = $("#table-<%- j %>");
+                var $rows<%- j %> = $TABLE<%- j %>.find("tr:not(:hidden)");
+                var headers<%- j %> = [];
+                var data<%- j %> = [];
+
+                $($rows<%- j %>.shift())
+                .find("th:not(:empty)")
+                .each(function() {
+                    headers<%- j %>.push(
+                        $(this)
+                        .text()
+                        .toLowerCase()
+                    );
+                });
+                $rows<%- j %>.each(function() {
+                    var $td<%- j %> = $(this).find("td");
+                    var h<%- j %> = {};
+                
+                    headers<%- j %>.forEach(function(header, i) {
+                        if (i!==0) h<%- j %>[header] = $td<%- j %>.eq(i).text();
+                    });
+                    data<%- j %>.push(h<%- j %>);
+                });
+                if (data<%- j %>.length) interviewFinal.push({ year: parseInt($('#label<%- j %>').text()), qa: data<%- j %>})
+            <% }) %>
+            data.interview = interviewFinal
             if (image) data.photoURI = image;
             $(this).ajaxSubmit({
                 data,
                 contentType: 'application/json',
                 success: function(response){
-                    toSaved();    
-                    window.location.replace('/admin') 
+                    toSaved();
+                    window.location.replace('/admin')
                 }
             });
-            return false;
         });
-       
+
         $("#imagename").change(function() {
             var imageFile = $(this)[0].files[0];
             var url = window.URL.createObjectURL(imageFile);
@@ -370,16 +395,92 @@
             $('.profile').attr("src",url);
         })
         $(document).ready(function(){
-            $('#editable').editableTableWidget({editor: $('<textarea>'), preventColumns: [ 1 ]});
             $('#labela').click()
-            $(".add-row").click(function(){
-                var i = 1;
-                var last = $('.table tr:last td:first')[0]
-                if (last) i = parseInt(last.innerHTML) + 1;
-                var markup = "<tr><td class='noEdit'>" + i + "</td><td> </td><td> </td></tr>";
-                $("#editable tbody").append(markup);
-                $('#editable').editableTableWidget({editor: $('<textarea>'), preventColumns: [ 1 ]});
+          <% scriptInt.forEach(function(interviewGroup, j) { %>
+            var $TABLE<%- j %> = $("#table-<%- j %>");
+            $(".table-add-<%- j %>").click(function() {
+              var i = 1;
+              console.log('adding')
+              var last = $('.table-<%- j %> tr:last td:first')[0]
+              if (last) i = parseInt(last.innerHTML) + 1;
+              var clone = `<tr><td contenteditable='true'>${i}</td><td contenteditable="true">Question</td><td contenteditable="true">Answer</td><td><i class="table-remove-<%- j %> fa fa-times" aria-hidden="true"></i></td><td><i class="table-up-<%- j %> fa fa-arrow-up" aria-hidden="true"></i><i class="table-down-<%- j %> fa fa-arrow-down" aria-hidden="true"></i></td></tr>`
+              $TABLE<%- j %>.find("table").append(clone);
+              $(".table-remove-<%- j %>").click(function() {
+                  $(this)
+                    .parents("tr")
+                    .detach();
+                });
+
+                $(".table-up-<%- j %>").click(function() {
+                  var $row = $(this).parents("tr");
+                  if ($row.index() === 1) return; // Don't go above the header
+                  $row.prev().before($row.get(0));
+                });
+
+                $(".table-down-<%- j %>").click(function() {
+                  var $row = $(this).parents("tr");
+                  $row.next().after($row.get(0));
+                });
             });
+            $(".table-remove-<%- j %>").click(function() {
+              $(this)
+                .parents("tr")
+                .detach();
+            });
+
+            $(".table-up-<%- j %>").click(function() {
+              var $row = $(this).parents("tr");
+              if ($row.index() === 1) return; // Don't go above the header
+              $row.prev().before($row.get(0));
+            });
+
+            $(".table-down-<%- j %>").click(function() {
+              var $row = $(this).parents("tr");
+              $row.next().after($row.get(0));
+            });
+          <% }) %>
+
+          var $TABLEA = $("#table-a");
+          $(".table-add-a").click(function() {
+            var i = 1;
+            var last = $('.table-a tr:last td:first')[0]
+            if (last) i = parseInt(last.innerHTML) + 1;
+            var clone = `<tr><td contenteditable='true'>${i}</td><td contenteditable="true">Question</td><td contenteditable="true">Answer</td><td><i class="table-remove-a fa fa-times" aria-hidden="true"></i></td><td><i class="table-up-a fa fa-arrow-up" aria-hidden="true"></i><i class="table-down-a fa fa-arrow-down" aria-hidden="true"></i></td></tr>`
+            $TABLEA.find("table").append(clone);
+            $(".table-remove-a").click(function() {
+                $(this)
+                  .parents("tr")
+                  .detach();
+              });
+
+              $(".table-up-a").click(function() {
+                var $row = $(this).parents("tr");
+                if ($row.index() === 1) return; // Don't go above the header
+                $row.prev().before($row.get(0));
+              });
+
+              $(".table-down-a").click(function() {
+                var $row = $(this).parents("tr");
+                $row.next().after($row.get(0));
+              });
+          });
+          
+          $(".table-remove-a").click(function() {
+            $(this)
+              .parents("tr")
+              .detach();
+          });
+
+          $(".table-up-a").click(function() {
+            var $row = $(this).parents("tr");
+            if ($row.index() === 1) return; // Don't go above the header
+            $row.prev().before($row.get(0));
+          });
+
+          $(".table-down-a").click(function() {
+            var $row = $(this).parents("tr");
+            $row.next().after($row.get(0));
+          });
         });
     </script>
 </body>

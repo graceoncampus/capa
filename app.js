@@ -76,7 +76,10 @@ app.post('/new', upload.single('imagename'), function (req, res, next) {
 app.post('/update', upload.single('imagename'), function (req, res, next) {
   var body = req.body
   body.program = req.body.program[0]
-  Student.update({ 'name': body.name }, body, function (err, numberAffected, raw) {
+  console.log(req.body)
+  Student.update({ '_id': body.id }, { $set: body }, function (err, numberAffected, raw) {
+    console.log(raw)
+    console.log(numberAffected)
     console.log(err)
   })
   res.send(req.body)

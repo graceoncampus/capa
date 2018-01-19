@@ -9,16 +9,28 @@
     <div class="container navbar-spacer" id="students">
         <div class="row title">
           <h1>Meet Our Students</h1>
-          <button class="btn btn-default mdiv-btn">Current</button>
-          <button class="btn btn-default diploma-btn">Graduates</button>
+
+          <div class="btn-group btn btn-default current-btn ">
+            <button class="no-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Current <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a data-value="Current" id="current">Current</a></li>
+              <li><a data-value="Master of Divinity" id="mdiv">Master of Divinity</a></li>
+              <li><a data-value="Advanced Diploma" id="addip">Advanced Diploma</a></li>
+            </ul>
+          </div>
+          <button class="btn btn-default grad-btn">Graduates</button>
           <button class="btn btn-default show-all-btn">Show All</button>
         </div>
         <div class="row">
-          <% students.forEach(function(s, i) { console.log(s.name, s.status); %>
-            <% if (s.status == "Current") { %>
-            <div class="col-md-3 col-sm-6 col-xs-4 student mdiv" >
+          <% students.forEach(function(s, i) { %>
+            <% if (s.status == "Current" && s.program.includes('Diploma')) { %>
+            <div class="col-md-3 col-sm-6 col-xs-4 student current diploma" >
+            <% } else if (s.status == "Current" && s.program.includes('Divinity')) { %>
+            <div class="col-md-3 col-sm-6 col-xs-4 student current mdiv" >
             <% } else { %>
-            <div class="col-md-3 col-sm-6 col-xs-4 student diploma" >
+            <div class="col-md-3 col-sm-6 col-xs-4 student grad" >
             <% } %>
               <% var mod_four;
                   if (i%4==0) {
@@ -44,32 +56,105 @@
     </div>
   <%- include footer.ejs %>
   <script type='text/javascript'>
+    let selected = 'current'
+
       $(document).ready(function() {
+        $(".dropdown-menu li a").click(function(){
+          $(this).parents(".current-btn").find('.no-button').html($(this).text() + ' <span class="caret"></span>');
+          $(this).parents(".current-btn").find('.no-button').val($(this).data('value'));
+        });
         $('.student-quote').hide();
         $('.student').hide();
-        $('.mdiv').show();
-
-        $('.diploma-btn').on('click', function() {
-          $('.btn').css("background-color", "transparent");
-          $('.btn').css("color", "#176ead");
-          $('.btn').css("border-color", "#176ead");
-          $(this).css("background-color", "#62abe1");
-          $(this).css("color", "#fff");
-          $(this).css("border-color", "#62abe1");
-          $('.student').hide();
-          $('.diploma').fadeIn(600);
+        $('.current').show();
+        $('.current-btn').css("background-color", "#62abe1");
+        $('.dropdown-toggle').css("color", "#fff");
+        $('.current-btn').css("border-color", "#62abe1");
+        $('.current-btn').hover(function () {
+          $(this).addClass('open')
         });
-        $('.mdiv-btn').on('click', function() {
-          $('.btn').css("background-color", "transparent");
-          $('.btn').css("color", "#176ead");
-          $('.btn').css("border-color", "#176ead");
-          $(this).css("background-color", "#62abe1");
-          $(this).css("color", "#fff");
-          $(this).css("border-color", "#62abe1");
-          $('.student').hide();
-          $('.mdiv').fadeIn(600);
+        $('.current-btn').mouseleave(function () {
+          $(this).removeClass('open')
+        });
+
+        $('.no-button').on('click', function (e) {
+          e.preventDefault();
+          if (selected!=='current') {
+            selected='current'
+            $('.dropdown-toggle').css("color", "#176ead");
+            $('.btn').css("background-color", "transparent");
+            $('.btn').css("color", "#176ead");
+            $('.btn').css("border-color", "#176ead");
+            $(this).parents(".current-btn").css("background-color", "#62abe1");
+            $(this).css("color", "#fff");
+            $(this).parents(".current-btn").css("border-color", "#62abe1");
+            $('.student').hide();
+            $('.current').fadeIn(600);
+          }
+        });
+
+        $('#mdiv').on('click', function(e) {
+          e.preventDefault();
+          if (selected!=='mdiv') {
+            selected='mdiv'
+            $('.dropdown-toggle').css("color", "#176ead");
+            $('.btn').css("background-color", "transparent");
+            $('.btn').css("color", "#176ead");
+            $('.btn').css("border-color", "#176ead");
+            $(this).parents(".current-btn").css("background-color", "#62abe1");
+            $(this).parents(".current-btn").find('.no-button').css("color", "#fff");
+            $(this).parents(".current-btn").css("border-color", "#62abe1");
+            $('.student').hide();
+            $('.mdiv').fadeIn(600);
+          }
+        });
+
+        $('#addip').on('click', function(e) {
+          e.preventDefault();
+          if (selected!=='addip') {
+            selected='addip'
+            $('.dropdown-toggle').css("color", "#176ead");
+            $('.btn').css("background-color", "transparent");
+            $('.btn').css("color", "#176ead");
+            $('.btn').css("border-color", "#176ead");
+            $(this).parents(".current-btn").css("background-color", "#62abe1");
+            $(this).parents(".current-btn").find('.no-button').css("color", "#fff");
+            $(this).parents(".current-btn").css("border-color", "#62abe1");
+            $('.student').hide();
+            $('.diploma').fadeIn(600);
+          }
+        });
+        $('#current').on('click', function(e) {
+          e.preventDefault();
+          if (selected!=='current') {
+            selected='current'
+            $('.dropdown-toggle').css("color", "#176ead");
+            $('.btn').css("background-color", "transparent");
+            $('.btn').css("color", "#176ead");
+            $('.btn').css("border-color", "#176ead");
+            $(this).parents(".current-btn").css("background-color", "#62abe1");
+            $(this).parents(".current-btn").find('.no-button').css("color", "#fff");
+            $(this).parents(".current-btn").css("border-color", "#62abe1");
+            $('.student').hide();
+            $('.current').fadeIn(600);
+          }
+        });
+        $('.grad-btn').on('click', function(e) {
+          e.preventDefault();
+          if (selected!=='graduate') {
+            selected='graduate'
+            $('.dropdown-toggle').css("color", "#176ead");
+            $('.btn').css("background-color", "transparent");
+            $('.btn').css("color", "#176ead");
+            $('.btn').css("border-color", "#176ead");
+            $(this).css("background-color", "#62abe1");
+            $(this).css("color", "#fff");
+            $(this).css("border-color", "#62abe1");
+            $('.student').hide();
+            $('.grad').fadeIn(600);
+          }
         });
         $('.show-all-btn').on('click', function() {
+          $('.dropdown-toggle').css("color", "#176ead");
           $('.btn').css("background-color", "transparent");
           $('.btn').css("color", "#176ead");
           $('.btn').css("border-color", "#176ead");

@@ -8,10 +8,9 @@ var data = fs.readFileSync('./bin/students.csv').toString()
 
 parse(data, function (err, output) {
   output.forEach(function (student, i) {
-    if (i === 0 || student[5] && student[5] === 'Hide') {
+    if (i === 0) {
       return
     }
-
     var s = new Student({
       name: student[0],
       draft: false,
@@ -42,7 +41,8 @@ parse(data, function (err, output) {
         s.audioTaglines.push(tagline)
       }
     })
-
+    if (student[0]==='Kondwani Nyanda')
+      console.log(s);    
     s.save()
   })
   console.log('Finished loading the students! YAY!')
